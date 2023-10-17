@@ -20,7 +20,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String test1() {
 		
-		System.out.println("test11111111111111111111111111");
+		System.out.println("test_집에보내주세요");
 		
 
 		return "cinema/cinema-homepage";
