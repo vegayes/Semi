@@ -3,6 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://Java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_4_0.xsd">
 
+
+
+
+
+   
+   
+   <welcome-file-list>
+    <welcome-file>hoem-page.jsp</welcome-file>
+    </welcome-file-list>
 	<!-- web.xml (배포 서술자) 
 	  서버가 켜질 때 가장 먼저 읽는 설정파일
 	  -->

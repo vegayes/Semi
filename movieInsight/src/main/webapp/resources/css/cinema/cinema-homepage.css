@@ -1,10 +1,14 @@
 
-// git 그만하고 싶어요..
+body {background-color: #000;  box-sizing: border-box;}
 
 
 
 
-		body {background-color: #000;  box-sizing: border-box;}
+
+
+
+		
+
         
         /* 지도 영역 */
         .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:10px;}  

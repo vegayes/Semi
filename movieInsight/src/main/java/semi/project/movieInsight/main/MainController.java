@@ -21,6 +21,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String test1() {
 		
+
 		
 
 		System.out.printf("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버 : " );
