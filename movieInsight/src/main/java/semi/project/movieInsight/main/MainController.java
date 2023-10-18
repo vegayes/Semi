@@ -22,6 +22,7 @@ public class MainController {
 	public String test1() {
 		
 		
+
 		System.out.printf("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버 : " );
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
