@@ -23,7 +23,8 @@ public class MainController {
 		System.out.println("test_집에보내주세요");
 		
 
-		return "cinema/cinema-homepage";
+//		return "cinema/cinema-homepage";
+		return "common/cinemaHeader";
 	}
 	
 }
