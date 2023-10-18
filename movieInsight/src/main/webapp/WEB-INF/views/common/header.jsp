@@ -6,6 +6,13 @@
 <%-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 	1) CSS 변경 ( hove 시 디자인 ) 
 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ --%>
+
+<%-- ◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎
+	1) 어느 페이지에 속해있는지 파악해야 함. (영화, 영화관 메인)  ==> + ) 검색도 영화 , 영화관 페이지마다 다르게 설정해야 할 듯. 
+	2) 로그인 파악
+	3) 프로필 파악
+◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎ --%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -70,38 +77,43 @@
 		                <a class = "user-login">
 		                    <i class="fa-solid fa-right-to-bracket"></i>
 		                    <span>LOGIN</span>
-		                </a>                	
+		                </a>
+		                
+		                <a class = "user-mypage">
+		                	<div class = "mypage-wrapper">
+		                	 	<i class="fa-solid fa-user"></i>    
+		                	</div>
+		                </a>
+		                                	
                 	</c:when>
                 	<%-- 2-2) 로그인  O 경우 --%>
                 	<c:otherwise>				
 		               <a class = "user-logout">
 		                   <i class="fa-solid fa-right-from-bracket"></i>
 		                   <span>LOGOUT</span>
-		               </a>	                	
+		               </a>
+		               
+		               <!-- ⑤ 버튼으로 만들어야 하나? -->
+		                <a class = "user-mypage">
+		                    <div class = "mypage-wrapper">
+		                    
+		                    	<%-- 3) 프로필 유무 ( 로그인부터 파악해야 하나..? ) --%>
+				                <c:choose>
+					                <%-- 3-2) 프로필이 없는 경우 --%>
+				                	<c:when test="true">
+						                 <i class="fa-solid fa-user"></i>          		
+				                	</c:when>
+				               		<%-- 3-1) 프로필이 있는 경우 --%>			                	
+				                	<c:otherwise>				
+						               <!-- ⑥이거 나중에 유저 사진으로 변경하기 -->
+						               <img src="resources/images/member/profile1.jpg">                  	
+				                	</c:otherwise>                	
+				                </c:choose>                        
+		                        
+		                    </div>
+		                </a>	                	
                 	</c:otherwise>                	
                 </c:choose>
-
-
-
-                    <!-- ⑤ 버튼으로 만들어야 하나? -->
-                <a class = "user-mypage">
-                    <div class = "mypage-wrapper">
-                    
-                    	<%-- 3) 프로필 유무 ( 로그인부터 파악해야 하나..? ) --%>
-		                <c:choose>
-		               		<%-- 3-1) 프로필이 있는 경우 --%>
-		                	<c:when test="false">
-		                	<!-- ⑥이거 나중에 유저 사진으로 변경하기 -->
-				                <img src="resources/images/member/profile1.jpg">             	
-		                	</c:when>
-		                	<%-- 3-2) 프로필이 없는 경우 --%>
-		                	<c:otherwise>				
-				               <i class="fa-solid fa-user"></i>                	
-		                	</c:otherwise>                	
-		                </c:choose>                        
-                        
-                    </div>
-                </a>
             </section>
         </nav>
 	</body>
