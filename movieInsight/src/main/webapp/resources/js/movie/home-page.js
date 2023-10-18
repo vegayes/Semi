@@ -1,4 +1,4 @@
- <!--  js   -->
+
   <script>
     new Swiper(".main-1", {
       slidesPerView: "auto",
