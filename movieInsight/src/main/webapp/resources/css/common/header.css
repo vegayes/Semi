@@ -180,4 +180,11 @@ nav section:nth-child(2){
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    overflow: hidden;
+}
+
+
+.mypage-wrapper>img{
+    width: 100%;
 }

@@ -24,7 +24,7 @@ public class MainController {
 		
 
 //		return "cinema/cinema-homepage";
-		return "admin/adminEvent";
+		return "common/header";
 	}
 	
 }
