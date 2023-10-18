@@ -4,7 +4,7 @@ public class EmailService {
   
 	 int signUp(String email, String string) {
 	 
-     int checkAuthKey(String inputKey, String email);
+//     int checkAuthKey(String inputKey, String email);
      
 		 
 		 
