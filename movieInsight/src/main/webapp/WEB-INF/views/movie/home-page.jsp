@@ -24,7 +24,7 @@
 
       <div class="right-menu">
         <div class="login"><img src="바탕화면/login.png" width="90" /></div>
-        <div class="user"><img src="바탕화면/info.png" width="36" /></div>
+        <div class="user"><a href="mypage.jsp"><img src="바탕화면/info.png" width="36" /></div>
       </div>
     </header>
     <main>
