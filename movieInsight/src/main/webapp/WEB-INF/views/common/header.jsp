@@ -27,9 +27,22 @@
 	<body>
         <nav>
             <section class = "logo">
-                <a>
-                    <img src="resources/images/common/logo.png">
-                </a>
+            <!-- movie , cinema 확인하고 logo 눌렀을 때 이동 시, 제대로 이동하기. -->
+            	<c:choose>
+            		<c:when test="true"> <%-- 영화관 페이지인 경우 --%>            	
+		                <a href="#">   <%-- 영화 메인페이지 컨트롤러- --%>               
+		                    <img src="resources/images/common/logo.png">
+		                </a>
+            		</c:when>
+            		
+            		<c:otherwise> <%-- 영화, 마이페이지 페이지인 경우 --%>  
+            		 	<a href="/">  <%-- 영화 메인페이지 컨트롤러- --%>              
+		                    <img src="resources/images/common/logo.png">
+		                </a>
+            		</c:otherwise>
+            		
+            	</c:choose>
+
             </section>
             
             <section class = "movie-search-area">
