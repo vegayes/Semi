@@ -160,6 +160,8 @@ aside > a{
     font-size: 28px;
     font-weight: bold;
     padding: 10px 20px;
+    
+    cursor: pointer;
 }
 
 

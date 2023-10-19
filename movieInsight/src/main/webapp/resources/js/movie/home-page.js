@@ -1,5 +1,4 @@
 
-  <script>
     new Swiper(".main-1", {
       slidesPerView: "auto",
       spaceBetween: 24,
