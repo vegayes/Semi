@@ -23,7 +23,6 @@ public class MainController {
 		
 
 
-
 		System.out.println("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버, 4.영화관 홈페이지 : " );
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
