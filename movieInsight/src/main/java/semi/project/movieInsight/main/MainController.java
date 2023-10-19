@@ -23,24 +23,35 @@ public class MainController {
 		
 
 
-		System.out.println("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버, 4.영화관 홈페이지 : " );
-		Scanner sc = new Scanner(System.in);
-		int num = sc.nextInt();
-		String path = "";
+//		System.out.println("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버, 4.영화관 홈페이지\n"
+//						+ "5: 마이페이지, 6: 메인페이지, 7: 관리자-메뉴, 8:관리자-홍보 " );
+//		Scanner sc = new Scanner(System.in);
+//		int num = sc.nextInt();
+//		String path = "";
+//		
+//		switch(num) {
+//		
+//		case 1: return  "manager/manager-cinema"; 
+//		
+//		case 2 : return "manager/manager-movie"; 
+//		
+//		case 3 : return "manager/manager-member"; 
+//		
+//		case 4 : return "cinema/cinema-homepage"; 
+//		
+//		case 5 : return "mypage/mypage";
+//		
+//		case 6 : return "common/main"; 
+//		
+//		case 7 : return "admin/admin-menu"; 
+//		
+//		case 8 : return "admin/admin-event";  
+//		
+//		default : return "common/main";
+//		}
 		
-		switch(num) {
-		
-		case 1: path = "manager/manager-cinema"; break;
-		
-		case 2 : path = "manager/manager-movie"; break;
-		
-		case 3 : path = "manager/manager-member"; break;
-		
-		case 4 : path = "cinema/cinema-homepage"; break;
-		
-		}
-		
-		return path ;
+		return "cinema/cinema-homepage"; 
+
 	}
 	
 }

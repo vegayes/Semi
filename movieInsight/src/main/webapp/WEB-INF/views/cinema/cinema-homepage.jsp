@@ -14,47 +14,8 @@
 </head>
 <body>
 
-
-        <nav>
-        <section class = "logo">
-            <!-- ① 로고 이미지? 및 버튼으로 변경  -->
-            <a>MovieInSight</a>
-        </section>
-        
-        <section class = "movie-search-area">
-            <form action="#" name="search-form"> <!-- ② action 값 변경-->
-                <fieldset>
-                    <input type="search" id="query" name="query"
-                    autocomplete="on" placeholder="검색">
-                    <button id="search-btn" class="fa-solid fa-magnifying-glass"></button>
-                </fieldset>
-            </form>
-
-            <div class = "main-sort">
-                <!-- ③ a 태그 입력하기 진행하기! main페이지로 이동할 수 있게  -->
-                <a>#인기순</a>
-                <a>#최신순</a>
-                <a>#장르별</a>
-            </div>
-        </section>
-
-        <section class = "user-function">
-            <!-- ④ a 태그로 만들기! -->
-            <a class = "user-login">
-                <!-- <a>LOGIN</a> -->
-                LOGIN
-            </a>
-
-             <!-- ⑤ 버튼으로 만들어야 하나? -->
-            <div class = "user-mypage">
-                <div class = "mypage-wrapper">
-                    <!-- ⑥이거 나중에 유저 사진으로 변경하기 -->
-                    <a class="fa-solid fa-user"></a>
-                </div>
-            </div>
-        </section>
-    </nav>
-
+	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+       
     <div id="sortButton">
 
         <button onclick="sortKoreanLinks()" style="margin: 50px 0 0 100px;  
@@ -82,47 +43,47 @@
             <ul class="swiper-wrapper">
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">1번 영화관</a>
+                    <a href="">라 영화관</a>
                 </li>
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">2번 영화관</a>
+                    <a href="">다 영화관</a>
                 </li>
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">3번 영화관</a>
+                    <a href="">나 영화관</a>
                 </li>
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">4번 영화관</a>
+                    <a href="">가 영화관</a>
                 </li>
 
                 
                 <li class="cinema_item swiper-slide">
-                    <a href="">5번 영화관</a>
+                    <a href="">아 영화관</a>
                 </li>
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">6번 영화관</a>
+                    <a href="">차 영화관</a>
                 </li>
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">7번 영화관</a>
-                </li>
-
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">8번 영화관</a>
+                    <a href="">카 영화관</a>
                 </li>
 
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">9번 영화관</a>
+                    <a href="">파 영화관</a>
                 </li>
 
 
                 <li class="cinema_item swiper-slide">
-                    <a href="">10번 영화관</a>
+                    <a href="">타 영화관</a>
+                </li>
+
+
+                <li class="cinema_item swiper-slide">
+                    <a href="">하 영화관</a>
                 </li>
             
             </ul>
@@ -135,29 +96,30 @@
     </div>
    
     <!--영화 이동 링크-->
-    <a href="">
+    <a href="/movie">
         <img  class="movie_link"><br>
     </a>
 
     <!--지도-->
-    <div class="map_wrap">
-        <div id="map" style="position:absolute; width:100%; height:100% ; overflow:hidden;"></div>
-
-        <div id="menu_wrap" class="bg_white">
-            <div class="option">
-                <div>
-                    <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input type="text" value="cgv" id="keyword" size="10"> 
-                        <button type="submit">검색하기</button> 
-                    </form>
-                </div>
-            </div>
-            <hr>
-            <ul id="placesList"></ul>
-            <div id="pagination"></div>
-        </div>
-    </div>
-                 
+    <div style="position:relative; width:70%; height: 500px; display:flex; margin-left:25%; margin-top:1%;">
+	    <div class="map_wrap">
+	        <div id="map" style="position:absolute; width:100%; height:100% ; overflow:hidden;"></div>
+	
+	        <div id="menu_wrap" class="bg_white">
+	            <div class="option">
+	                <div>
+	                    <form onsubmit="searchPlaces(); return false;">
+	                        키워드 : <input type="text" value="cgv" id="keyword" size="10"> 
+	                        <button type="submit" style="color:black";>검색하기</button> 
+	                    </form>
+	                </div>
+	            </div>
+	            <hr>
+	            <ul id="placesList"></ul>
+	            <div id="pagination"></div>
+	        </div>
+	    </div>
+    </div>           
     <div class="cinema_promotion">
         <a href="" class="cinema_special" id="cinema_special"></a>
         <a href="" class="cinema_special">
