@@ -6,6 +6,7 @@
 
     
 // 전역 변수로 현재 위치 정보를 저장할 객체 선언
+var distanceData = [];  // 데이터를 거리순으로 정렬할 때 사용
 var currentLocation = null;
 currentlatitude = 0;
 currentlongitude = 0;
@@ -62,13 +63,35 @@ function searchPlaces() {
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
+function placesSearchCB(data, status, pagination) {  //data : 검색결과
     if (status === kakao.maps.services.Status.OK) {
-
+		
+		console.log(pagination);
+		
+		console.log("data",data);
+		
+		let sortedData = [];
+		
+		
+		for (let j = 0; j< pagination.last; j++) {
+		
+			for(let i = 0; i < data.length; i++) {
+			
+				distanceData.push(data[i]);
+			}
+			
+		
+			
+		}	
+		
+	
+		
+		
         // 정상적으로 검색이 완료됐으면
         // 검색 목록과 마커를 표출합니다
-        distanceSort(data);
-
+        distanceSort(distanceData);   //검색 결과를 거리별로 정렬하는 distance 함수에 넣음
+		console.log("distanceData : ", distanceData);
+		
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
 
@@ -85,6 +108,7 @@ function placesSearchCB(data, status, pagination) {
     }
 }
 
+// 좌표를 입력받아서 거리를 구하는 함수
 function getDistance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
 		return 0;
@@ -107,25 +131,31 @@ function getDistance(lat1, lon1, lat2, lon2, unit) {
 	}
 }
 
+	// 검색결과(data를 입력받아서 거리별로 정렬하는 함수)
     function distanceSort(data)  {
     
 
     // 각 장소의 거리를 계산하고 거리 정보를 추가
-    for (let i = 0; i < data.length; i++) {
-        let distance = getDistance(currentlatitude, currentlongitude, data[i].y, data[i].x, "K");
-        data[i].distance = distance;
-    }
-
+    
+   
+	    for (let i = 0; i < data.length; i++) {
+	        let distance = getDistance(currentlatitude, currentlongitude, data[i].y, data[i].x, "K"); 
+	        //distance : 거리를 구하는 함수
+	        data[i].distance = distance;
+	    }
+		
+		console.log(data);
     // 거리 순으로 정렬
     data.sort(function (a, b) {
         return a.distance - b.distance;
     });
-
-    // 정렬된 결과를 활용하여 원하는 작업 수행
+	
+	
+    // 정렬된 결과를 활용하여 원하는 작업 수행 	
     displayPlaces(data);
 
-}
 
+ }
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(places) {
 
@@ -290,8 +320,11 @@ function removeAllChildNods(el) {
 
 // 한글 순 정렬
 function sortKoreanLinks() {
+	
+	console.log("test123");
+
     // .cinema_list 클래스를 가진 모든 링크 요소를 수집합니다.
-    var links = document.querySelectorAll('.cinema_list');
+    var links = document.querySelectorAll('.cinema_item');
 
     // 링크를 배열로 변환합니다.
     var linksArray = Array.from(links);
@@ -302,7 +335,7 @@ function sortKoreanLinks() {
     });
 
     // .cinema_list_container 내의 모든 링크 요소를 제거합니다.
-    var container = document.querySelector('.cinema_list_container');
+    var container = document.querySelector('.swiper-wrapper');
     container.innerHTML = '';
 
     // 정렬된 링크를 .cinema_list_container 내에 추가합니다.
@@ -310,6 +343,17 @@ function sortKoreanLinks() {
         container.appendChild(linksArray[i]);
     }
 }
+
+
+function sortDistance() {
+
+	console.log("test12345");
+	
+
+}
+
+
+
 
 
 // ==================================================//
