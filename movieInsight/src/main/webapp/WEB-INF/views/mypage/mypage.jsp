@@ -16,6 +16,7 @@
 		
 		
 		<link rel="stylesheet" href="/resources/css/mypage/mypage.css">
+		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">
 	</head>
 	<body>
 		<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -59,9 +60,165 @@
 
 
 
-                        <a class = "edit-favorite-btn" id = "favorite-popup">
+                        <div class = "edit-favorite-btn" id = "favorite-popup-open">
                             <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
+                        </div>
+                        
+                        
+                        <%-- =====================================================================================================================================       
+                       								 즐겨찾기 리스트     --%> 
+                        <div id = "favorite-list-modal-box">
+                            <div id = "favorite-list-modal-content">
+                                <div id = "fv-modal-close" >&times;</div>
+                                <div class = "popup-title">
+                                    MovieInSight
+                                </div>
+                    
+                                <div class = "favorite-deletAll-btn-container">
+                                    <label>
+                                        <input type="checkbox" name = "favorite-check-All" id = "favorite-check-All"></input>
+                                        전체선택
+                                    </label>
+                                </div>
+                    
+                                <div class = "favorite-list-container">
+                                    <table class = "favorite-list-table">
+                                        <thead>
+                                            <tr>
+                                                <th class = "favorite-list-img">list</th>
+                                                <th class = "favorite-list-title">Title</th>
+                                                <th class = "favorite-list-date">Date of registration</th>
+                                                <th class = "favorite-list-check">check</th>
+                                            </tr>
+                                        </thead>
+                    
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name ="favorite-check" id="check_btn"/>
+                                                <label for="check_btn"></label>
+                                            </td>
+                                        </tr>
+                    
+                    
+                                        
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                    
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                    
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                    
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                    
+                                        <tr class = "favorite-list">
+                                            <td class = "favorite-list-img">
+                                                <div class = "favorite-list-img-wrapper">
+                                                    <img src="">
+                                                </div>  
+                    
+                                            </td>
+                                            <td class = "favorite-list-title">미니언즈</td>
+                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                            <td class = "favorite-list-check">
+                                                <input type="checkbox" name = "favorite-check" id = ""/>
+                                                <!-- <label for="check_btn"></label> -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                   
+                                </div>
+                                
+                                <div class = "favorite-delet-btn-container">
+                                    <button>삭제</button>
+                                </div>                               
+
+
+
+                            </div>
+                            <label  id = "fv-modal-back"></label>
+                        </div>                        
+                        
+                        
+                        
 
                     </div>
 
@@ -70,32 +227,32 @@
                         <div class="swiper-wrapper">
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-wrapper">
-                                    <img src = "ex-img/엘리멘탈.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
                            
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-wrapper ">
-                                    <img src = "ex-img/모아나.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-wrapper">
-                                    <img src = "ex-img/모아나.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-wrapper ">
-                                    <img src = "ex-img/모아나.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-wrapper ">
-                                    <img src = "ex-img/주토피아.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
@@ -119,16 +276,16 @@
                             <div class="gallery-container">
                                 <div class="gallery">
                                     <div class="favorite-list-wrapper">
-                                        <img src=" ex-img/주토피아.jpg " alt="Image 1">
+                                        <img src="  " alt="Image 1">
                                     </div>
                                     <div class="favorite-list-wrapper">
-                                        <img src="ex-img/엘리멘탈.jpg" alt="Image 2">
+                                        <img src="" alt="Image 2">
                                     </div>
                                     <div class="favorite-list-wrapper">
-                                        <img src="ex-img/미니언즈.jpg" alt="Image 3">
+                                        <img src="" alt="Image 3">
                                     </div>
                                     <div class="favorite-list-wrapper">
-                                        <img src="ex-img/모아나.jpg" alt="Image 4">
+                                        <img src="" alt="Image 4">
                                     </div>
                                     
                                 
@@ -150,45 +307,45 @@
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-cinema-wrapper ">
                                     <!-- ② src은 JSP에서?? DB에서?? 변경해야 함 -->
-                                    <img src = "ex-img/4DX.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/CGV 왕십리.png">
+                                    <img src = "">
                                 </div>
                             </div>
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/CGV 왕십리.png">
-                                </div>
-                            </div>
-
-
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/CGV 용산아이파크몰.png">
-                                </div>
-                            </div>
-
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/씨네 리빙룸.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/씨네 리빙룸.jpg">
+                                    <img src = "">
                                 </div>
                             </div>
 
                             <div class = "swiper-slide">
                                 <div class = "favorite-list-cinema-wrapper ">
-                                    <img src = "ex-img/씨네 리빙룸.jpg">
+                                    <img src = "">
+                                </div>
+                            </div>
+
+
+                            <div class = "swiper-slide">
+                                <div class = "favorite-list-cinema-wrapper ">
+                                    <img src = "">
+                                </div>
+                            </div>
+
+                            <div class = "swiper-slide">
+                                <div class = "favorite-list-cinema-wrapper ">
+                                    <img src = "">
                                 </div>
                             </div>
 
@@ -247,7 +404,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/인사이드 아웃.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 인사이드 아웃</h1>
@@ -264,7 +421,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/미니언즈.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 미니언즈</h1>
@@ -281,7 +438,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/주토피아.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 주토피아</h1>
@@ -298,7 +455,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/엘리멘탈.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 엘리멘탈</h1>
@@ -315,7 +472,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/미니언즈.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 미니언즈</h1>
@@ -332,7 +489,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/주토피아.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 주토피아</h1>
@@ -349,7 +506,7 @@
 
                                 <tr class = "visit-history-list">
                                     <td class = "history-img-container">
-                                        <img src = "ex-img/엘리멘탈.jpg">
+                                        <img src = "">
                                     </td>
                                     <td class = "history-content-container">
                                         <h1> 엘리멘탈</h1>
@@ -684,7 +841,7 @@
                             <div class = "member-info-profile-container">
 
                                 <div class = "member-profile-wrapper">
-                                    <img src="ex-img/주토피아2.jpg">
+                                    <img src="">
                                 </div>
 
                                 <input type="file" id="file-input" />
@@ -810,7 +967,7 @@
         <!-- Swiper 스크립트 추가 -->
         <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
-        <script src = "my-page.js"></script>		
+        <script src = "resources/js/mypage/mypage.js"></script>		
 		
 	</body>
 </html>
