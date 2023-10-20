@@ -69,6 +69,7 @@ document.getElementsByName("favorite-check").forEach(function(v) {
 
 
 
+
 // 3) 즐겨찾기 -> 영화관, 영화 구분하기
 const movieBtn = document.getElementById("movie-favorite-btn");
 const cinemaBtn = document.getElementById("cinema-favorite-btn");

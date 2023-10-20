@@ -1,3 +1,4 @@
+
 /*존재하지 않은 데이터에 대한 폰트*/
 @font-face {
     font-family: 'KBO-Dia-Gothic_bold';
@@ -5,6 +6,7 @@
     font-weight: 700;
     font-style: normal;
 }
+
 
 *{
     box-sizing: border-box;
@@ -99,8 +101,10 @@ aside > a{
 
 /* 중복되면 mypage-favorite 지우기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
+
 /* ==========================================================================================================*/
 										/*마이페이지 => 즐겨찾기 */
+
 .mypage-favorite{
     height: 820px;
 
@@ -109,7 +113,7 @@ aside > a{
     flex-direction: column;
     align-items: center;
 
-}
+
 
 /* 마이페이지-즐겨찾기 */
 .mypage-title{
@@ -174,6 +178,7 @@ aside > a{
 }
 
 
+
 /*==============================================================================================*/
 
 .favorite-not-content{
@@ -187,8 +192,6 @@ aside > a{
     font-size : 40px;
 	font-family : "KBO-Dia-Gothic_bold";
 }
-
-
 
 /*.favorite-list, */.swiper{
     /* flex-basis: 57%; */
@@ -292,7 +295,9 @@ aside > a{
     flex-basis: 57%;
     /* border: 2px solid yellow; */
 
+
      /*display: flex;*/
+
 }
 
 .ftMain{

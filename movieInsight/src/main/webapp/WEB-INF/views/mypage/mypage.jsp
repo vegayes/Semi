@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
@@ -18,6 +18,7 @@
 		
 		
 		<link rel="stylesheet" href="/resources/css/mypage/mypage.css">
+
 <!--  		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">-->
 <!-- 	<link rel="stylesheet" href="/resources/css/mypage/comment-update-popup.css">  -->	
 	</head>
@@ -39,6 +40,7 @@
 
                     <div class = "mypage-title">
 
+
                        	<p>My Page</p>
                        
                         <p>${sessionScope.loginMember.memberNickname}님, 환영합니다.</p>
@@ -46,6 +48,7 @@
                     </div>
 
                     <div class = "favorite-setting" >
+
                         <a class = "movie-favorite-btn" id = "movie-favorite-btn">
                             <i class="fa-solid fa-star"></i>
                             영화 즐겨찾기
@@ -56,8 +59,10 @@
                             영화관 즐겨찾기
                         </a>
 
+
 <%-- js로 빼지 말고 해야하나??:: 영화를 누르면 회원이 저장한 영화 즐겨찾기에 대한 데이터 가져오기
                          :: 영화관을 누르면 회원이 저장한 영화관 즐겨찾게 대한 데이터 가져오기  --%>
+
 
 
                         <div class = "edit-favorite-btn" id = "favorite-popup-open">
@@ -286,6 +291,7 @@
 	                        <!-- If we need scrollbar -->
 	                        <div class="swiper-scrollbar"></div>
                     	</c:if>
+
 
                     </div>
 
@@ -565,6 +571,7 @@
                             <tr class = "comment-list-col">
                                 <td class = "comment-list-check">
                                     <input type="checkbox" name = "comment-check" id = "check">
+
                                     <label for="check"></label> 
                                 </td>
                                 <td class = "comment-list-content">댓글1 내용</td>
@@ -572,6 +579,7 @@
                                 <td class = "comment-list-edit" id = "cmPopup">
                                     <button>
                                         수정 팝업 테스트
+
                                     </button>
                                 </td>
                             </tr>
@@ -581,6 +589,8 @@
                             <tr class = "comment-list-col">
                                 <td class = "comment-list-check">
                                     <input type="checkbox" name = "comment-check">
+
+
                                 </td>
                                 <td class = "comment-list-content">댓글1 내용</td>
                                 <td class = "comment-list-date"> 작성 날짜</td>
@@ -836,6 +846,7 @@
                         </table>
                     </div>
                 </section>
+
                 
                 
                 
@@ -902,6 +913,7 @@
                 </div>   
 
 				<%-- ========================================   댓글 수정 팝업 종료 =========================================--%>
+
 
 
 

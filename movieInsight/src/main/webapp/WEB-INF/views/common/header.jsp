@@ -30,6 +30,7 @@
             <section class = "logo">
             <!-- movie , cinema 확인하고 logo 눌렀을 때 이동 시, 제대로 이동하기. -->
             	<c:choose>
+
             		<c:when test="false"> <%-- 영화관 페이지인 경우 --%>            	
 		                <a href="/cinema">   <%-- 영화 메인페이지 컨트롤러- --%>               
 		                    <img src="resources/images/common/logo.png">
@@ -47,11 +48,11 @@
             </section>
             
             <section class = "movie-search-area">
-
                		<%--1) 페이지에 따라  --%>
                 	<%-- 1-1) 영화 메인 페이지의 경우 --%>
                 	<c:choose>
 	                    <c:when test="true">
+
 			              	<form action="/search" name="movieSearch"> <!-- ② action 값 변경-->
 			                  <fieldset>
 			                      <input type="search" id="query" name="movieQuery"
@@ -87,7 +88,6 @@
 							
 		                </c:otherwise>
                 	</c:choose>
-
             </section>
 
             <section class = "user-function">
