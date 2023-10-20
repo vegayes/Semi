@@ -1,12 +1,13 @@
 
+
 // ===========지도 api의 javaScript==================================================
-
-
 
 
     
 // 전역 변수로 현재 위치 정보를 저장할 객체 선언
-var distanceData = [];  // 데이터를 거리순으로 정렬할 때 사용
+let distanceData = [];
+let placeNameList = [];
+
 var currentLocation = null;
 currentlatitude = 0;
 currentlongitude = 0;
@@ -54,43 +55,35 @@ searchPlaces();
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
 
-    var keyword = document.getElementById('keyword').value + "서울";
+    var keyword = document.getElementById('keyword').value + "서울 영화관";
 
-    
+	placeNameList = [];
+	
+	// 검색할 때 마다 영화관 목록 초기화
+	let ul = document.querySelector(".swiper-wrapper");
+                	let liElements = ul.querySelectorAll(".swiper-slide");
+						liElements.forEach(function (li) {
+						  ul.removeChild(li);
+					});
+	
 
     // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
     ps.keywordSearch( keyword, placesSearchCB); 
+    
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {  //data : 검색결과
+	
     if (status === kakao.maps.services.Status.OK) {
 		
-		console.log(pagination);
-		
-		console.log("data",data);
-		
-		let sortedData = [];
-		
-		
-		for (let j = 0; j< pagination.last; j++) {
-		
-			for(let i = 0; i < data.length; i++) {
-			
-				distanceData.push(data[i]);
-			}
-			
-		
-			
-		}	
-		
-	
+		distanceData = data;
 		
 		
         // 정상적으로 검색이 완료됐으면
         // 검색 목록과 마커를 표출합니다
         distanceSort(distanceData);   //검색 결과를 거리별로 정렬하는 distance 함수에 넣음
-		console.log("distanceData : ", distanceData);
+		
 		
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
@@ -144,7 +137,7 @@ function getDistance(lat1, lon1, lat2, lon2, unit) {
 	        data[i].distance = distance;
 	    }
 		
-		console.log(data);
+		
     // 거리 순으로 정렬
     data.sort(function (a, b) {
         return a.distance - b.distance;
@@ -153,17 +146,27 @@ function getDistance(lat1, lon1, lat2, lon2, unit) {
 	
     // 정렬된 결과를 활용하여 원하는 작업 수행 	
     displayPlaces(data);
-
+	
 
  }
-// 검색 결과 목록과 마커를 표출하는 함수입니다
+ 
+ 
+ 
+// 검색 결과 목록과 마커를 표출 함수 + 맨 위 영화관 목록 생성
 function displayPlaces(places) {
+
 
     var listEl = document.getElementById('placesList'), 
     menuEl = document.getElementById('menu_wrap'),
     fragment = document.createDocumentFragment(), 
     bounds = new kakao.maps.LatLngBounds(), 
     listStr = '';
+    
+    //결과확인
+    console.log("distanceData(검색결과) : ", distanceData);
+    console.log("placeNameList(이름) : ", placeNameList);
+    console.log("결과 개수 : ", distanceData.length);
+    
     
     // 검색 결과 목록에 추가된 항목들을 제거합니다
     removeAllChildNods(listEl);
@@ -177,7 +180,9 @@ function displayPlaces(places) {
         var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
             marker = addMarker(placePosition, i), 
             itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
-
+            
+			placeNameList[i] = places[i].place_name; //장소의 이름만 담은 배열 생성
+			
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
         bounds.extend(placePosition);
@@ -204,14 +209,43 @@ function displayPlaces(places) {
         })(marker, places[i].place_name);
 
         fragment.appendChild(itemEl);
+       
     }
-
+	
     // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
     listEl.appendChild(fragment);
     menuEl.scrollTop = 0;
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
     map.setBounds(bounds);
+    
+    
+    // 맨 위 영화관 목록 지도 검색결과로 작성하기
+	let ul = document.querySelector(".swiper-wrapper");
+	
+	for (let i = 0; i < distanceData.length; i++) {
+	  // <li> 요소 생성
+	  let li = document.createElement("li");
+	  li.classList.add("cinema_item", "swiper-slide");
+	  
+	  console.log("test");
+	  
+	  // <a> 요소 생성
+	  let a = document.createElement("a");
+	  a.href = "#"; // 링크 URL 설정
+	
+	  // <a> 요소에 텍스트 콘텐츠 설정
+	  a.innerText = placeNameList[i]; // placeNameList의 값을 텍스트로 설정
+	
+	  // <a> 요소를 <li> 요소의 자식으로 추가
+	  li.appendChild(a);
+	
+	  // <li> 요소를 <ul> 요소의 자식으로 추가
+	  ul.appendChild(li);
+	  
+	}
+    
+    
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -221,7 +255,9 @@ function getListItem(index, places) {
     itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
                 '<div class="info">' +
                 '   <h5>' + places.place_name + '</h5>';
-
+                
+	
+	
     if (places.road_address_name) {
         itemStr += '    <span>' + places.road_address_name + '</span>' +
                     '   <span class="jibun gray">' +  places.address_name  + '</span>';
@@ -234,7 +270,7 @@ function getListItem(index, places) {
 
     el.innerHTML = itemStr;
     el.className = 'item';
-
+	
     return el;
 }
 
@@ -288,7 +324,16 @@ function displayPagination(pagination) {
         } else {
             el.onclick = (function(i) {
                 return function() {
+                	// 지도 검색결과 페이지를 넘길 때 적용 : 영화관 목록 초기화, 이름 검색결과 초기화, 페이지 이동
+                	let ul = document.querySelector(".swiper-wrapper");
+                	let liElements = ul.querySelectorAll(".swiper-slide");
+						liElements.forEach(function (li) {
+						  ul.removeChild(li);
+					});
+ 
+                	placeNameList = [];
                     pagination.gotoPage(i);
+                   
                 }
             })(i);
         }
@@ -302,7 +347,7 @@ function displayPagination(pagination) {
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title) {
     var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
-
+	// console.log("title : ", title);
     infowindow.setContent(content);
     infowindow.open(map, marker);
 }
@@ -314,14 +359,22 @@ function removeAllChildNods(el) {
     }
 }
 
+
+
+
+
+
+
+
 // =======================지도 api javaScript 끝!!======================================
+
 
 
 
 // 한글 순 정렬
 function sortKoreanLinks() {
 	
-	console.log("test123");
+	console.log("한글순 정렬");
 
     // .cinema_list 클래스를 가진 모든 링크 요소를 수집합니다.
     var links = document.querySelectorAll('.cinema_item');
@@ -345,12 +398,37 @@ function sortKoreanLinks() {
 }
 
 
+// 거리순 정렬
 function sortDistance() {
 
-	console.log("test12345");
+	console.log("거리순 정렬");
 	
+	 // .cinema_list 클래스를 가진 모든 링크 요소를 수집합니다.
+    var links = document.querySelectorAll('.cinema_item');
 
+    // 링크를 배열로 변환합니다.
+    var linksArray = Array.from(links);
+    
+    /*
+    // 거리 순으로 정렬
+    linksArray.sort(function (a, b) {
+        return a.distance - b.distance;
+    });
+    */ 
+
+    // .cinema_list_container 내의 모든 링크 요소를 제거합니다.
+    var container = document.querySelector('.swiper-wrapper');
+    container.innerHTML = '';
+
+    // 정렬된 링크를 .cinema_list_container 내에 추가합니다.
+    for (var i = 0; i < distanceData.length; i++) {
+        container.appendChild(distanceData[i]);
+    }
 }
+   
+   
+
+
 
 
 
