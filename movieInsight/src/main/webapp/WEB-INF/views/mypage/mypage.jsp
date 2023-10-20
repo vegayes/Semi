@@ -17,6 +17,7 @@
 		
 		<link rel="stylesheet" href="/resources/css/mypage/mypage.css">
 		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">
+		<link rel="stylesheet" href="/resources/css/mypage/comment-update-popup.css">
 	</head>
 	<body>
 		<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -218,7 +219,7 @@
                         </div>                        
                         
                         
-                        
+                        <%-- ============================================================ 즐겨찾기 리스트 (팝업) 끝 ============================================================ --%>
 
                     </div>
 
@@ -551,9 +552,9 @@
                                 </td>
                                 <td class = "comment-list-content">댓글1 내용</td>
                                 <td class = "comment-list-date"> 작성 날짜</td>
-                                <td class = "comment-list-edit">
+                                <td class = "comment-list-edit" id = "cmPopup">
                                     <button>
-                                        수정
+                                        수정 팝업 테스트
                                     </button>
                                 </td>
                             </tr>
@@ -819,7 +820,72 @@
                         </table>
                     </div>
                 </section>
+                
+                
+                
+                <%--  ===========================================  댓글 수정 팝업  시작  ==================================== --%>
+                <div id = "comment-update-modal-box">
+                    <div id = "comment-update-content">
+                        <div id = "cm-modal-close" >&times;</div>
+                        <section class ="title-container">
+                            댓글 수정
+                        </section>
+                        <!-- 추가도 동일 -->
+            
+                        <section class = "update-container">
+                            <div class = "update-info-container">
+                                <table>
+            
+                                    <tr>
+                                        <th> 게시물 명 </th>
+                                        <td>
+                                            <input type="text" readonly>
+                                            <!-- readonly :: 글 수정 불가하게 하기  -->
+                                        </td>
+                                    </tr>
+            
+                                    <tr>
+                                        <th> 댓글 내용</th>
+                                        <td>
+                                            <input type="text" autocapitalize="off">
+                                        </td>
+                                    </tr>
+            
+                                    <tr>
+                                        <th> 영화평점 </th>
+                                        <!-- 별점으로 표시하면 좋을 거 같음. -->
+                                        <td>
+                                            <input type="number">
+                                        </td>
+                                    </tr>
+            
+                                    <tr>
+                                        <th> 작성 및 수정일 </th>
+                                        <td>
+                                            <input type="text" readonly>
+                                        </td>
+                                    </tr>
+            
+                                </table>
+            
+            
+                            </div>
+                        </section>
+            
+                        <section class = "update-btn-container">
+                            <div class ="btn">
+                                수정하기
+                            </div>
+                            <div class ="btn">
+                                취소하기
+                            </div>
+                        </section>
 
+                    </div>
+                    <label  id = "cm-modal-back"></label>
+                </div>   
+
+				<%-- ========================================   댓글 수정 팝업 종료 =========================================--%>
 
 
 

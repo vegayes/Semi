@@ -139,9 +139,9 @@ body {background-color: #000;  box-sizing: border-box;}
 
         /* 상단 로고 부분 css */
 
-       
+       /*은서 :  이 밑에 다 지워도 되는거죠?? */
 
-        
+      /*  
         nav{
             color: white;
             flex-basis: 100%;
@@ -149,39 +149,34 @@ body {background-color: #000;  box-sizing: border-box;}
 
             display: flex;
 
-            /* 위에 고정 */
             position:sticky;
             top: 0;
 
             background-color: #101322;
 
-            /* 요소 우선순위 주기 ( 앞으로 올리기 )  */
             z-index: 3;
         }
 
 
         *{
             box-sizing: border-box;
-            list-style : none; /* 리스트 스타일 X */
+            list-style : none; 
             text-decoration: none;
             padding: 0;
             margin: 0;
             font-family: 'Noto Sans','GmarketSansMedium' ;
-            /* font-family: 'KBO-Dia-Gothic_bold'; */
-        }
+        } */
 
-
+/*
         nav section:not(:nth-child(2)){
         flex-basis: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
-        /* 로고 폰트 사이즈  ① 로고 사이즈 변경 및 이미지면 이미지 사이즈 변경  */
         font-size: 40px;
         font-weight: bold;
         }
 
-        /* nav- 검색창 */
         nav section:nth-child(2){
             flex-basis: 60%;
 
@@ -189,18 +184,17 @@ body {background-color: #000;  box-sizing: border-box;}
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
+        } */
 
         /* .movie-search-area > form{
             padding-top: px;
         } */
-
+/*
         .movie-search-area fieldset{
             width: 1000px;
             border: 2px solid black;
 
             height: 45px;
-            /*border-radius: 5px; */
             margin: 0;
             margin-bottom: 5px;
             padding: 2px;
@@ -224,7 +218,7 @@ body {background-color: #000;  box-sizing: border-box;}
             font-size: 1.2em;
             border-radius: 0px 5px 5px 0px   ;
             border: none;
-            background-color: white; /* transparent : 투명 */
+            background-color: white; 
             color: black;
         }
 
@@ -247,7 +241,7 @@ body {background-color: #000;  box-sizing: border-box;}
             margin : 0px 50px;
             cursor: pointer;
             color: white;
-        }
+        }*/
 
 
         /* nav - 유저 버튼 */
@@ -257,7 +251,7 @@ body {background-color: #000;  box-sizing: border-box;}
             justify-content: center;
         } */
 
-        .user-login {
+   /*     .user-login {
             width: 170px;
             height: 55px;
             border-radius: 50px;
@@ -269,7 +263,7 @@ body {background-color: #000;  box-sizing: border-box;}
             background-color: white;
             color:black;
             font-size: 30px;
-        }
+        } */
 
         /* ===========로고 끝 ================ */
 
