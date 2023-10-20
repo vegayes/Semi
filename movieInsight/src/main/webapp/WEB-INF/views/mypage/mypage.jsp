@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,8 +18,8 @@
 		
 		
 		<link rel="stylesheet" href="/resources/css/mypage/mypage.css">
-		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">
-		<link rel="stylesheet" href="/resources/css/mypage/comment-update-popup.css">
+<!--  		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">-->
+<!-- 	<link rel="stylesheet" href="/resources/css/mypage/comment-update-popup.css">  -->	
 	</head>
 	<body>
 		<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -37,17 +39,13 @@
 
                     <div class = "mypage-title">
 
-                       <p>My Page</p>
+                       	<p>My Page</p>
                        
-                        <p>User님, 환영합니다.</p>
-                        <!--<h1>My Page</h1>
-                        <h1>User님, 환영합니다.</h1> -->
-                        <!-- ①User는 로그인한 사람 JSP에서 변경해야함 -->
+                        <p>${sessionScope.loginMember.memberNickname}님, 환영합니다.</p>
+<%-- ①User는 로그인한 사람 JSP에서 변경해야함  --%>
                     </div>
 
                     <div class = "favorite-setting" >
-
-
                         <a class = "movie-favorite-btn" id = "movie-favorite-btn">
                             <i class="fa-solid fa-star"></i>
                             영화 즐겨찾기
@@ -58,217 +56,236 @@
                             영화관 즐겨찾기
                         </a>
 
-
+<%-- js로 빼지 말고 해야하나??:: 영화를 누르면 회원이 저장한 영화 즐겨찾기에 대한 데이터 가져오기
+                         :: 영화관을 누르면 회원이 저장한 영화관 즐겨찾게 대한 데이터 가져오기  --%>
 
 
                         <div class = "edit-favorite-btn" id = "favorite-popup-open">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </div>
-                        
-                        
-                        <%-- =====================================================================================================================================       
-                       								 즐겨찾기 리스트     --%> 
-                        <div id = "favorite-list-modal-box">
-                            <div id = "favorite-list-modal-content">
-                                <div id = "fv-modal-close" >&times;</div>
-                                <div class = "popup-title">
-                                    MovieInSight
-                                </div>
-                    
-                                <div class = "favorite-deletAll-btn-container">
-                                    <label>
-                                        <input type="checkbox" name = "favorite-check-All" id = "favorite-check-All"></input>
-                                        전체선택
-                                    </label>
-                                </div>
-                    
-                                <div class = "favorite-list-container">
-                                    <table class = "favorite-list-table">
-                                        <thead>
-                                            <tr>
-                                                <th class = "favorite-list-img">list</th>
-                                                <th class = "favorite-list-title">Title</th>
-                                                <th class = "favorite-list-date">Date of registration</th>
-                                                <th class = "favorite-list-check">check</th>
-                                            </tr>
-                                        </thead>
-                    
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name ="favorite-check" id="check_btn"/>
-                                                <label for="check_btn"></label>
-                                            </td>
-                                        </tr>
-                    
-                    
-                                        
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                    
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                    
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                    
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                    
-                                        <tr class = "favorite-list">
-                                            <td class = "favorite-list-img">
-                                                <div class = "favorite-list-img-wrapper">
-                                                    <img src="">
-                                                </div>  
-                    
-                                            </td>
-                                            <td class = "favorite-list-title">미니언즈</td>
-                                            <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
-                                            <td class = "favorite-list-check">
-                                                <input type="checkbox" name = "favorite-check" id = ""/>
-                                                <!-- <label for="check_btn"></label> -->
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                   
-                                </div>
-                                
-                                <div class = "favorite-delet-btn-container">
-                                    <button>삭제</button>
-                                </div>                               
-
-
-
-                            </div>
-                            <label  id = "fv-modal-back"></label>
-                        </div>                        
-                        
-                        
-                        <%-- ============================================================ 즐겨찾기 리스트 (팝업) 끝 ============================================================ --%>
-
                     </div>
-
-                    <div class = "favorite-list swiper" id = "movie-favorite-container"  >
-
-                        <div class="swiper-wrapper">
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-wrapper">
-                                    <img src = "">
-                                </div>
-                            </div>
-                           
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-wrapper ">
-                                    <img src = "">
-                                </div>
-                            </div>
-
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-wrapper">
-                                    <img src = "">
-                                </div>
-                            </div>
-
-
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-wrapper ">
-                                    <img src = "">
-                                </div>
-                            </div>
-
-                            <div class = "swiper-slide">
-                                <div class = "favorite-list-wrapper ">
-                                    <img src = "">
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                            <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
                     
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
                     
+                    
+                    <!-- --------------------------------------------------------------------------------- -->
+                 
+ <%-- =====================================================================================================================================       
+                    								 즐겨찾기 리스트  팝업    --%> 
+                     <div id = "favorite-list-modal-box" style="display : none;">
+                         <div id = "favorite-list-modal-content">
+                             <div id = "fv-modal-close" >&times;</div>
+                             <div class = "popup-title">
+                                 MovieInSight
+                             </div>
+                 
+                             <div class = "favorite-deletAll-btn-container">
+                                 <label>
+                                     <input type="checkbox" name = "favorite-check-All" id = "favorite-check-All"></input>
+                                     전체선택
+                                 </label>
+                             </div>
+                 
+                             <div class = "favorite-list-container">
+                                 <table class = "favorite-list-table">
+                                     <thead>
+                                         <tr>
+                                             <th class = "favorite-list-img">list</th>
+                                             <th class = "favorite-list-title">Title</th>
+                                             <th class = "favorite-list-date">Date of registration</th>
+                                             <th class = "favorite-list-check">check</th>
+                                         </tr>
+                                     </thead>
+                 
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name ="favorite-check" id="check_btn"/>
+                                             <label for="check_btn"></label>
+                                         </td>
+                                     </tr>
+                 
+                 
+                                     
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check" />
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                 
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check"/>
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                 
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check" />
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                 
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check" />
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check" />
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                 
+                                     <tr class = "favorite-list">
+                                         <td class = "favorite-list-img">
+                                             <div class = "favorite-list-img-wrapper">
+                                                 <img src="">
+                                             </div>  
+                 
+                                         </td>
+                                         <td class = "favorite-list-title">미니언즈</td>
+                                         <td class = "favorite-list-date">2023-09-27 12:00:12 </td>
+                                         <td class = "favorite-list-check">
+                                             <input type="checkbox" name = "favorite-check" id = ""/>
+                                             <!-- <label for="check_btn"></label> -->
+                                         </td>
+                                     </tr>
+                                 </table>
+                                 
+                                
+                             </div>
+                             
+                             <div class = "favorite-delet-btn-container">
+                                 <button>삭제</button>
+                             </div>                               
+
+
+
+                         </div>
+                         <label  id = "fv-modal-back"></label>
+                     </div>                        
+                     
+                     
+                     <%-- ============================================================ 즐겨찾기 리스트 (팝업) 끝 ============================================================ --%>
+					
+					<%--1) 즐겨찾기 리스트가 없는 경우  --%>
+					
+					<%--<c:if test="${empty }">--%>
+					<div class = "favorite-list swiper" id = "movie-favorite-container"  >
+						<%--1) 즐겨찾기 리스트가 없는 경우  --%>
+						<c:if test = "true">
+							
+							<div class = "favorite-not-content">
+								 현재 저장된 즐겨찾기가 없습니다. 
+								 <!-- ★★★★★★★★★★★★★★★★★★★★★★★★ 추가하러 가기 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★  -->
+							</div>
+						
+						</c:if>
+					
+						
+						<%-- 1-1) 즐겨 찾기 리스트가 있는 경우 --%>
+                    	<c:if test = "false">
+
+	                        <div class="swiper-wrapper">
+	                            <div class = "swiper-slide">
+	                                <div class = "favorite-list-wrapper">
+	                                    <img src = "">
+	                                </div>
+	                            </div>
+	                           
+	                            <div class = "swiper-slide">
+	                                <div class = "favorite-list-wrapper ">
+	                                    <img src = "">
+	                                </div>
+	                            </div>
+	
+	                            <div class = "swiper-slide">
+	                                <div class = "favorite-list-wrapper">
+	                                    <img src = "">
+	                                </div>
+	                            </div>
+	
+	
+	                            <div class = "swiper-slide">
+	                                <div class = "favorite-list-wrapper ">
+	                                    <img src = "">
+	                                </div>
+	                            </div>
+	
+	                            <div class = "swiper-slide">
+	                                <div class = "favorite-list-wrapper ">
+	                                    <img src = "">
+	                                </div>
+	                            </div>
+	
+	                        </div>
+	                        
+	                            <!-- If we need pagination -->
+	                        <div class="swiper-pagination"></div>
+	                    
+	                        <!-- If we need navigation buttons -->
+	                        <div class="swiper-button-prev"></div>
+	                        <div class="swiper-button-next"></div>
+	
+	                        <!-- If we need scrollbar -->
+	                        <div class="swiper-scrollbar"></div>
+                    	</c:if>
 
                     </div>
 
@@ -548,7 +565,7 @@
                             <tr class = "comment-list-col">
                                 <td class = "comment-list-check">
                                     <input type="checkbox" name = "comment-check" id = "check">
-                                    <label for="chk"></label> 
+                                    <label for="check"></label> 
                                 </td>
                                 <td class = "comment-list-content">댓글1 내용</td>
                                 <td class = "comment-list-date"> 작성 날짜</td>
@@ -564,7 +581,6 @@
                             <tr class = "comment-list-col">
                                 <td class = "comment-list-check">
                                     <input type="checkbox" name = "comment-check">
-                                    <label for="chk"></label> 
                                 </td>
                                 <td class = "comment-list-content">댓글1 내용</td>
                                 <td class = "comment-list-date"> 작성 날짜</td>

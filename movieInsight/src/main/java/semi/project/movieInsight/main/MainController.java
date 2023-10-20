@@ -51,6 +51,7 @@ public class MainController {
 //		}
 		
 //		return "cinema/cinema-homepage"; 
+//		return "movie/search-movie";
 		return "mypage/mypage";
 	}
 	
