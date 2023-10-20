@@ -41,54 +41,11 @@
 
                 
             <ul class="swiper-wrapper">
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">라 영화관</a>
-                </li>
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">다 영화관</a>
-                </li>
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">나 영화관</a>
-                </li>
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">가 영화관</a>
-                </li>
-
-                
-                <li class="cinema_item swiper-slide">
-                    <a href="">아 영화관</a>
-                </li>
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">차 영화관</a>
-                </li>
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">카 영화관</a>
-                </li>
-
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">파 영화관</a>
-                </li>
-
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">타 영화관</a>
-                </li>
-
-
-                <li class="cinema_item swiper-slide">
-                    <a href="">하 영화관</a>
-                </li>
-            
+              
+                          
             </ul>
 
-            <!-- If we need navigation buttons -->
+
             <div class="swiper-button-prev main-1-p"></div>
             <div class="swiper-button-next main-1-n"></div>
         </section>

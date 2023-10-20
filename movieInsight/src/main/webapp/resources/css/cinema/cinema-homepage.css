@@ -75,16 +75,16 @@ body {background-color: #000;  box-sizing: border-box;}
             border-radius: 30px;
             overflow: hidden;
             background-color:#CDD2FF;
+            text-align: center;
             
         }
 
 
         .cinema_item > a {
             
-            margin-left: 15%;
-            font-family: Inter; font-size: 40px; 
+            font-family: Inter; font-size: 17px; 
             font-weight: 400;  
-            text-align: center; line-height: 180px; text-decoration: none; color: #000;
+            line-height: 170px; text-decoration: none; color: #000;
         }
 
         .cinema_item:hover {  background-color: #7bdff5; }
