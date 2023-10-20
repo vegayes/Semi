@@ -1,4 +1,13 @@
 
+/*존재하지 않은 데이터에 대한 폰트*/
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
 *{
     box-sizing: border-box;
     list-style : none; /* 리스트 스타일 X */
@@ -91,6 +100,11 @@ aside > a{
 }
 
 /* 중복되면 mypage-favorite 지우기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+/* ==========================================================================================================*/
+										/*마이페이지 => 즐겨찾기 */
+
 .mypage-favorite{
     height: 820px;
 
@@ -99,8 +113,6 @@ aside > a{
     flex-direction: column;
     align-items: center;
 
-    /* border: 1px solid aqua ; */
-}
 
 
 /* 마이페이지-즐겨찾기 */
@@ -128,6 +140,7 @@ aside > a{
     display: flex;
     justify-content: space-around;
 }
+
 
 .favorite-setting > a:not(:nth-of-type(3)) {
     background-color: white;
@@ -164,6 +177,21 @@ aside > a{
     cursor: pointer;
 }
 
+
+
+/*==============================================================================================*/
+
+.favorite-not-content{
+    width:1300px;
+    height:400px;
+	
+	display : flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size : 40px;
+	font-family : "KBO-Dia-Gothic_bold";
+}
 
 /*.favorite-list, */.swiper{
     /* flex-basis: 57%; */
@@ -267,7 +295,9 @@ aside > a{
     flex-basis: 57%;
     /* border: 2px solid yellow; */
 
-    /* display: flex; */
+
+     /*display: flex;*/
+
 }
 
 .ftMain{

@@ -23,6 +23,7 @@ public class MainController {
 		
 
 
+
 //		System.out.println("1: 관리자-영화관, 2.관리자-영화, 3.관리자 멤버, 4.영화관 홈페이지\n"
 //						+ "5: 마이페이지, 6: 메인페이지, 7: 관리자-메뉴, 8:관리자-홍보 " );
 //		Scanner sc = new Scanner(System.in);
@@ -50,8 +51,9 @@ public class MainController {
 //		default : return "common/main";
 //		}
 		
-		return "cinema/cinema-homepage"; 
-
+//		return "cinema/cinema-homepage"; 
+//		return "movie/search-movie";
+		return "mypage/mypage";
 	}
 	
 }

@@ -70,6 +70,217 @@ document.getElementsByName("favorite-check").forEach(function(v) {
 
 
 
+// 3) 즐겨찾기 -> 영화관, 영화 구분하기
+const movieBtn = document.getElementById("movie-favorite-btn");
+const cinemaBtn = document.getElementById("cinema-favorite-btn");
 
+const favoriteMovieContainer =document.getElementById("movie-favorite-container");
+const favoriteCinemaContainer =document.getElementById("cinema-favorite-container");
+
+
+
+cinemaBtn.addEventListener("click" ,function(){
+    
+  console.log("영화 누름");
+
+  cinemaBtn.style.opacity = "1";
+  cinemaBtn.style.color = "black";
+
+  movieBtn.style.opacity = "0.5";
+
+  favoriteMovieContainer.style.display = "none";
+  favoriteCinemaContainer.style.display = "";
+});
+
+
+movieBtn.addEventListener("click" ,function(){
+    
+  console.log("영화관 누름");
+
+  cinemaBtn.style.opacity = "0.5";
+
+
+  movieBtn.style.opacity = "1";
+  movieBtn.style.color = "black";
+
+  favoriteMovieContainer.style.display = "";
+  favoriteCinemaContainer.style.display = "none";
+});
+
+
+
+
+
+// 4) 슬라이더
+const swiper = new Swiper('.swiper', {
+
+  // If we need pagination
+  // pagination: {
+  //   el: '.swiper-pagination',
+  // },
+
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+
+  // spaceBetween: 10
+});
+
+
+
+// 5) 체크박스 하나만 선택하게하기 ( 성별 )
+// const divCheckboxes = document.querySelectorAll('.modify-gender');
+
+// // 클릭 이벤트를 처리하는 함수
+// function handleCheckboxInteraction() {
+//   const checkbox = this.querySelector('input[type="checkbox"]');
+//   const label = this.querySelector('label');
+
+//   // 모든 체크박스의 배경색과 레이블 색상을 초기화
+//   divCheckboxes.forEach((otherDiv) => {
+//     otherDiv.style.backgroundColor = '';
+//     otherDiv.querySelector('label').style.color = ''; 
+//   });
+
+//   // 선택된 체크박스의 배경색과 레이블 색상을 변경
+//   this.style.backgroundColor = 'blue';
+//   label.style.color = 'white';
+//   checkbox.checked = !checkbox.checked; // 체크박스 상태 변경
+// }
+
+// // 각 div 요소에 클릭 이벤트 리스너를 추가합니다.
+// divCheckboxes.forEach((divCheckbox) => {
+//   divCheckbox.addEventListener('click', handleCheckboxInteraction);
+// });
+// 4) 파일 열기
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const fileTrigger = document.getElementById("file-trigger");
+//   const fileInput = document.getElementById("file-input");
+
+//   fileTrigger.addEventListener("click", function() {
+//       fileInput.click(); // 파일 업로드 input 열기
+//   });
+// });
+
+
+
+// 5) 체크박스 하나만 선택하게하기 ( 성별 )
+const divCheckboxes = document.querySelectorAll('.modify-gender');
+
+// 클릭 이벤트를 처리하는 함수
+function handleCheckboxInteraction() {
+  const checkbox = this.querySelector('input[type="checkbox"]');
+  const label = this.querySelector('label');
+
+  // 모든 체크박스의 배경색과 레이블 색상을 초기화
+  divCheckboxes.forEach((otherDiv) => {
+    otherDiv.style.backgroundColor = '';
+    otherDiv.querySelector('label').style.color = ''; 
+  });
+
+  // 선택된 체크박스의 배경색과 레이블 색상을 변경
+  this.style.backgroundColor = 'blue';
+  label.style.color = 'white';
+  checkbox.checked = !checkbox.checked; // 체크박스 상태 변경
+}
+
+// 각 div 요소에 클릭 이벤트 리스너를 추가합니다.
+divCheckboxes.forEach((divCheckbox) => {
+  divCheckbox.addEventListener('click', handleCheckboxInteraction);
+});
+
+
+
+
+
+
+
+//6) 
+// Swiper 초기화 및 설정
+// const swiper = new Swiper('.swiper-container', {
+//   // 슬라이드 모드를 horizontal로 설정
+//   direction: 'horizontal',
+
+//   // 한 번에 보여지는 슬라이드 개수 (1로 설정하면 1개씩 슬라이딩)
+//   slidesPerView: 1,
+
+//   // 슬라이더의 루프를 설정
+//   loop: true,
+
+//   // 다음 버튼을 사용하여 다음 슬라이드로 이동
+//   navigation: {
+//     nextEl: '.next-btn',
+//   },
+// });
+
+// // "next-btn" 클릭 시 다음 슬라이드로 이동
+// document.querySelector('.next-btn').addEventListener('click', () => {
+//   swiper.slideNext();
+// });
+
+
+const gallery = document.querySelector('.gallery');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let scrollPosition = 0;
+
+nextButton.addEventListener('click', () => {
+  scrollPosition += gallery.clientWidth;
+  if (scrollPosition > gallery.scrollWidth - gallery.clientWidth) {
+    scrollPosition = gallery.scrollWidth - gallery.clientWidth;
+  }
+  gallery.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+prevButton.addEventListener('click', () => {
+  scrollPosition -= gallery.clientWidth;
+  if (scrollPosition < 0) {
+    scrollPosition = 0;
+  }
+  gallery.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+
+
+// --------------------------------------------------------------
+//  댓글 수정 팝업 
+
+// 1) 팝업창 띄우기
+
+const modalCM = document.getElementById("comment-update-modal-box");
+const modalCMContent = document.getElementById("comment-update-content");
+const openModalCMBtn = document.getElementById("cmPopup");
+const closeModalCMBtn = document.getElementById("cm-modal-close");
+const closeModalCMBack = document.getElementById("cm-modal-back");
+
+function modalCMOpen(){
+    modalCM.style.display ="flex";
+}
+
+function modalCMClose(){
+
+  console.log("닫기");
+    modalCM.style.display = "none";
+}
+
+
+// 모달창 열기
+openModalCMBtn.addEventListener("click", modalCMOpen);
+// 모달창 닫기
+closeModalCMBtn.addEventListener("click", modalCMClose);
+closeModalCMBack.addEventListener("click", modalCMClose);
+
+
+// ------------------------------------------------------------------------------------------------------
 
 
