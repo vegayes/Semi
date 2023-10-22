@@ -1,14 +1,14 @@
 package semi.project.movieInsight.movie.dto;
 
-import java.util.List;
-
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 public class Movie {
 	
     private int movieNo;
@@ -23,4 +23,11 @@ public class Movie {
     private String movieDelYN;
     
 
+//  배우 이름 조회 
+    private String actorNames;
+//  감독 이름 조회 
+    private String directorNames;
+    
+    
+    
 }

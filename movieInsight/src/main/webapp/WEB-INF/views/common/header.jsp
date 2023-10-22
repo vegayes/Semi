@@ -95,13 +95,18 @@
      			<%-- 2) 로그인 유무  --%>
                 <c:choose>
                		<%-- 2-1) 로그인 X 경우 --%>
-                	<c:when test="true">
-		                <a class = "user-login">
+                	<c:when test="false">
+		                <a class = "user-login"  href= "#">
 		                    <i class="fa-solid fa-right-to-bracket"></i>
-		                    <span>LOGIN</span>
+		                    <p>LOGIN</p>
+		                    
+	                        <span></span>
+						    <span></span>
+						    <span></span>
+						    <span></span>
 		                </a>
 		                
-		                <a class = "user-mypage">
+		                <a class = "user-mypage"  href= "#">
 		                	<div class = "mypage-wrapper">
 		                	 	<i class="fa-solid fa-user"></i>    
 		                	</div>
@@ -110,13 +115,13 @@
                 	</c:when>
                 	<%-- 2-2) 로그인  O 경우 --%>
                 	<c:otherwise>				
-		               <a class = "user-logout">
+		               <a class = "user-logout"  href="/">
 		                   <i class="fa-solid fa-right-from-bracket"></i>
 		                   <span>LOGOUT</span>
 		               </a>
 		               
 		               <!-- ⑤ 버튼으로 만들어야 하나? -->
-		                <a class = "user-mypage">
+		                <a class = "user-mypage" href="/mypage">
 		                    <div class = "mypage-wrapper">
 		                    
 		                    	<%-- 3) 프로필 유무 ( 로그인부터 파악해야 하나..? ) --%>
