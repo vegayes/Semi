@@ -14,6 +14,7 @@
 </head>
 <body>
     <header>
+
         <a>
             <img src="/resources/images/movie/movieT/로고.png">
         </a>
@@ -44,7 +45,9 @@
     <main>
         <div class="movie">
             <div class="movie_img">
-            	 <img src="/resources/images/movie/movieT/영화포스터.png">
+            	<c:if test="">
+            	 	<img src="/resources/images/movie/movieT/moviePoster.png">
+            	</c:if>
             </div>
             <div>
                 <div class="movie_title">
@@ -98,59 +101,61 @@
             <div class="mp2Head">
                 <h1 id="mm">영화 예매</h1>
             </div>
-            <div class="mmcon">
-                <div class="line1">
-                    <div class="l1-1">
-                        <a href="">
-                            <img src="/resources/images/movie/movieT/Rectangle 3.png">
-                        </a>
-                    </div>
-                    <div class="l1-2">
-                        <h3 id="ms">메가박스 코엑스몰 <br>
-                            서울 강남구 봉은사로 524 코엑스몰 B1</h3>
-                    </div>
-                    <div class="l1-3">
-                        <h3>
-                            <a id="my" href="https://www.megabox.co.kr/booking">예매 바로가기</a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="line2">
-                    <div class="l2-1">
-                        <a href="">
-                            <img src="/resources/images/movie/movieT/Rectangle 4.png">
-                        </a>
-                    </div>
-                    <div class="l2-2">
-                        <h3 id="ms">CGV 용산아이파크몰 <br>
-                            서울특별시 용산구 한강대로23길 55</h3>
-                    </div>
-                    <div class="l2-3">
-                        <h3>
-                            <a id="my" href="http://www.cgv.co.kr/theaters/?theaterCode=0013">예매 바로가기</a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="line3">
-                    <div class="l3-1">
-                        <a href="">
-                            <img src="/resources/images/movie/movieT/Rectangle 2.png">
-                        </a>
-                    </div>
-                    <div class="l3-2">
-                        <h3 id="ms">
-                            CGV 왕십리 <br>
-                            서울특별시 성동구 행당동 왕십리광장로 17
-                        </h3>
-                    </div>
-                    <div class="l3-3">
-                        <h3>
-                            <a id="my" href="http://www.cgv.co.kr/theaters/?areacode=01&theaterCode=0074&date=20230919">예매 바로가기</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+            	<form action="/Reservation" method="POST" name="movieReservation">
+		            <div class="mmcon">
+		                <div class="line1">
+		                    <div class="l1-1">
+		                        <a href="">
+		                            <img src="/resources/images/movie/movieT/Rectangle 3.png">
+		                        </a>
+		                    </div>
+		                    <div class="l1-2">
+		                        <h3 id="ms">메가박스 코엑스몰 <br>
+		                            서울 강남구 봉은사로 524 코엑스몰 B1</h3>
+		                    </div>
+		                    <div class="l1-3">
+		                        <h3>
+		                            <a id="my" href="https://www.megabox.co.kr/booking">예매 바로가기</a>
+		                        </h3>
+		                    </div>
+		                </div>
+		                <div class="line2">
+		                    <div class="l2-1">
+		                        <a href="">
+		                            <img src="/resources/images/movie/movieT/Rectangle 4.png">
+		                        </a>
+		                    </div>
+		                    <div class="l2-2">
+		                        <h3 id="ms">CGV 용산아이파크몰 <br>
+		                            서울특별시 용산구 한강대로23길 55</h3>
+		                    </div>
+		                    <div class="l2-3">
+		                        <h3>
+		                            <a id="my" href="http://www.cgv.co.kr/theaters/?theaterCode=0013">예매 바로가기</a>
+		                        </h3>
+		                    </div>
+		                </div>
+		                <div class="line3">
+		                    <div class="l3-1">
+		                        <a href="">
+		                            <img src="/resources/images/movie/movieT/Rectangle 2.png">
+		                        </a>
+		                    </div>
+		                    <div class="l3-2">
+		                        <h3 id="ms">
+		                            CGV 왕십리 <br>
+		                            서울특별시 성동구 행당동 왕십리광장로 17
+		                        </h3>
+		                    </div>
+		                    <div class="l3-3">
+		                        <h3>
+		                            <a id="my" href="http://www.cgv.co.kr/theaters/?areacode=01&theaterCode=0074&date=20230919">예매 바로가기</a>
+		                        </h3>
+		                    </div>
+		                </div>
+		            </div>
+			   </form>
+          </div>
 
 
         <div class="comment">
@@ -213,27 +218,27 @@
                     <div class="gallery-container">
                       <div class="gallery">
                         <div class="ft1">
-                          <a href="">
+                          <a href="/favorite1">
                             <img src="/resources/images/movie/movieT/youtube-logo 1.png" alt="Image 1">
                           </a>
                         </div>
                         <div class="ft2">
-                          <a href="">
+                          <a href="/favorite2">
                             <img src="/resources/images/movie/movieT/logo 2.png" alt="Image 2">
                           </a>
                         </div>
                         <div class="ft3">
-                          <a href="">
+                          <a href="/favorite3">
                             <img src="/resources/images/movie/movieT/cat2 3.png" alt="Image 3">
                           </a>
                         </div>
                         <div class="ft4">
-                          <a href="">
+                          <a href="/favorite4">
                             <img src="/resources/images/movie/movieT/cat2 4.png" alt="Image 4">
                           </a>
                         </div>
                         <div class="ft5">
-                          <a href="">
+                          <a href="/favorite5">
                             <img src="/resources/images/movie/movieT/DR.CHEON.jpg" alt="Image 5">
                           </a>
                         </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaService.java
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\controller\MovieController.java
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaDetailServiceImpl.java
@@ -24,3 +25,31 @@ C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movi
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\dao\MemberDAO.java
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\service\EmailService.java
 C:\Users\user1\Desktop\project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\dao\MovieDAO.java
+=======
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaService.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\controller\EmailController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\dao\MemberDAO.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaServiceimpl.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\dto\Member.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\dto\Cinema.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\dto\Movie.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\controller\CinemaController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\dao\CinemaDetailDAO.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\service\EmailServiceImpl.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\service\MovieServiceimpl.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\dao\EmailDAO.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\main\MainController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\service\MemberServiceimpl.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\service\MovieService.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\controller\MovieController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\dao\CinemaDAO.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\service\EmailService.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\mypage\MypageController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\service\MemberService.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\movie\dao\MovieDAO.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaDetailService.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\service\CinemaDetailServiceImpl.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\controller\CinemaDetailController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\member\controller\MemberController.java
+C:\SEMI_PROJECT_GIT\Semi_Project\Semi\movieInsight\src\main\java\semi\project\movieInsight\cinema\dto\Menu.java
+>>>>>>> 537ad2fd15536339f736d93b152dc8a3bdf14816

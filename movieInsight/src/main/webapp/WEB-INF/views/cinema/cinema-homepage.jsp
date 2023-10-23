@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>cinema-homepage</title>
- <link rel="stylesheet" href="/resources/css/cinema/cinema-homepage.css">
+ <link rel="stylesheet" href="/movieInsight/resources/css/cinema/cinema-homepage.css">
    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
@@ -42,9 +42,7 @@
                 
             <ul class="swiper-wrapper">
               
-                          
             </ul>
-
 
             <div class="swiper-button-prev main-1-p"></div>
             <div class="swiper-button-next main-1-n"></div>
@@ -121,11 +119,14 @@
     <br><br><br><br><br>
     
 
+
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
 </body>
 
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bd0095e2bd371f5a6ae43c67546f3c62&libraries=services"></script>
-<script src="/resources/js/cinema/cinema-homepage.js"></script>
+<script src="/movieInsight/resources/js/cinema/cinema-homepage.js"></script>
 
 
 

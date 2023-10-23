@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import semi.project.movieInsight.movie.dto.Movie;
 import semi.project.movieInsight.movie.service.MovieService;
@@ -17,6 +18,7 @@ public class MovieController {
 	
 	@Autowired
 	private MovieService service;
+	
 	
 
 	/** 1) 영화 관련 페이지에서 검색한 내용 가져오기 
@@ -41,7 +43,6 @@ public class MovieController {
         return "movie/search-movie";
     }
 	
-
 	/*
 	  @RequestMapping("/Reservation")
 	    public String showMovieReservation(Model model) {
@@ -50,9 +51,6 @@ public class MovieController {
 	        return "reservationPage";
 	    }
 		*/
-	
-	
-	
 	
 	
 	/** 좋아할 만한 영화 클릭
@@ -94,6 +92,7 @@ public class MovieController {
 	public String favorite5() {
 		return "movie/movieT";
 	}
+	
 	
 	
 	//@GetMapping("/movie/이동할 상세페이지의 movieNo")

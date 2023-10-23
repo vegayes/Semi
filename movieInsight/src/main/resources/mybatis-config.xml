@@ -13,13 +13,15 @@
 	<typeAliases>
 	 
 		<typeAlias type="semi.project.movieInsight.movie.dto.Movie" alias="Movie"/>
-	
+		<typeAlias type="semi.project.movieInsight.cinema.dto.Cinema" alias="Cinema"/>
 	</typeAliases>	
 	
 	<!-- mapper파일(SQL 작성되는파일) 위치 등록 부분 -->
 	<mappers>
   
 		<mapper resource="/mappers/movie-mapper.xml"/>
+		<mapper resource="/mappers/cinema-mapper.xml"/>
+		<mapper resource="/mappers/member-mapper.xml"/>
 
 	</mappers>
 

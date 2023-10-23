@@ -17,7 +17,7 @@
 		<meta charset="UTF-8">
 		<title>Footer</title>
 		
-		<link rel="stylesheet" href ="/resources/css/common/footer.css">
+		<link rel="stylesheet" href ="/movieInsight/resources/css/common/footer.css">
 
         <script src="https://kit.fontawesome.com/ac58eafae7.js" crossorigin="anonymous"></script>
 		
