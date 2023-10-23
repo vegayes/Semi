@@ -41,6 +41,60 @@ public class MovieController {
         return "movie/search-movie";
     }
 	
+
+	/*
+	  @RequestMapping("/Reservation")
+	    public String showMovieReservation(Model model) {
+	        List<MovieReservation> reservations = movieService.getAllReservations(); // 데이터베이스에서 정보 가져오기
+	        model.addAttribute("reservations", reservations); // 모델에 정보 추가
+	        return "reservationPage";
+	    }
+		*/
+	
+	
+	
+	
+	
+	/** 좋아할 만한 영화 클릭
+	 * @return
+	 */
+	@GetMapping("/favorite1")
+	public String favorite1() {
+		return "movie/movieT";
+	}
+	
+	/** 좋아할 만한 영화 클릭
+	 * @return
+	 */
+	@GetMapping("/favorite2")
+	public String favorite2() {
+		return "movie/movieT";
+	}
+	
+	/** 좋아할 만한 영화 클릭
+	 * @return
+	 */
+	@GetMapping("/favorite3")
+	public String favorite3() {
+		return "movie/movieT";
+	}
+	
+	/** 좋아할 만한 영화 클릭
+	 * @return
+	 */
+	@GetMapping("/favorite4")
+	public String favorite4() {
+		return "movie/movieT";
+	}
+	
+	/** 좋아할 만한 영화 클릭
+	 * @return
+	 */
+	@GetMapping("/favorite5")
+	public String favorite5() {
+		return "movie/movieT";
+	}
+	
 	
 	//@GetMapping("/movie/이동할 상세페이지의 movieNo")
 	@GetMapping("/movie/move")
