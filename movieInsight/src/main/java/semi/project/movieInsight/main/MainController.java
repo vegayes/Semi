@@ -48,8 +48,8 @@ public class MainController {
 //		default : return "common/main";
 //		}
 		
-//		return "cinema/cinema-homepage"; 
-		return "movie/movieT";
+		return "cinema/cinema-homepage"; 
+//		return "movie/movieT";
 //		return "mypage/mypage";
 //		return "movie/home-page";
 	}
