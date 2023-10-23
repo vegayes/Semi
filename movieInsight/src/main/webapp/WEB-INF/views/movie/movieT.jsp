@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>movieT</title>
-    <link rel="stylesheet" href="/resources/css/movie/movieT.css">
+    <link rel="stylesheet" href="/movieInsight/resources/css/movie/movieT.css">
     <script src="https://kit.fontawesome.com/69a462bb6c.js" crossorigin="anonymous"></script>
     
     <style>
@@ -16,14 +16,14 @@
     <header>
 
         <a>
-            <img src="/resources/images/movie/movieT/로고.png">
+            <img src="/movieInsight/resources/images/movie/movieT/로고.png">
         </a>
         <nav>
             <form action="#">
                 <fieldset id="search">
                     <input type="search" placeholder="검색" >
                     <button>
-                        <img src="/resources/images/movie/movieT/search-icon.png" id="search_icon">
+                        <img src="/movieInsight/resources/images/movie/movieT/search-icon.png" id="search_icon">
                     </button>
                 </fieldset>
             </form>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <button id="user_button">
-                    <img src="/resources/images/movie/movieT/사용자.png">
+                    <img src="/movieInsight/resources/images/movie/movieT/사용자.png">
                 </button>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <div class="movie">
             <div class="movie_img">
             	<c:if test="">
-            	 	<img src="/resources/images/movie/movieT/moviePoster.png">
+            	 	<img src="/movieInsight/resources/images/movie/movieT/moviePoster.png">
             	</c:if>
             </div>
             <div>
@@ -106,7 +106,7 @@
 		                <div class="line1">
 		                    <div class="l1-1">
 		                        <a href="">
-		                            <img src="/resources/images/movie/movieT/Rectangle 3.png">
+		                            <img src="/movieInsight/resources/images/movie/movieT/Rectangle 3.png">
 		                        </a>
 		                    </div>
 		                    <div class="l1-2">
@@ -122,7 +122,7 @@
 		                <div class="line2">
 		                    <div class="l2-1">
 		                        <a href="">
-		                            <img src="/resources/images/movie/movieT/Rectangle 4.png">
+		                            <img src="/movieInsight/resources/images/movie/movieT/Rectangle 4.png">
 		                        </a>
 		                    </div>
 		                    <div class="l2-2">
@@ -138,7 +138,7 @@
 		                <div class="line3">
 		                    <div class="l3-1">
 		                        <a href="">
-		                            <img src="/resources/images/movie/movieT/Rectangle 2.png">
+		                            <img src="/movieInsight/resources/images/movie/movieT/Rectangle 2.png">
 		                        </a>
 		                    </div>
 		                    <div class="l3-2">
@@ -162,25 +162,25 @@
             <div class="comhead"><h1 id="comment">comment</h1></div>
                 <div class="combody">
                         <div class="comb1">
-                            <img id="pop1" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png">
+                            <img id="pop1" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png">
                         </div>
                         <div class="comb2">
                             <div class="cb1"><h2 id="idd">id :</h2></div><div class="cb1-1"><h3 id="dd1">댓글내용 .......................................................................................................</h3></div><div class="cb1-2"><button class="editBtn">수정</button><button class="deletBtn">삭제</button></div>
                         </div>
                         <div class="comb3">
-                            <img id="pop1" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png">
+                            <img id="pop1" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png">
                         </div>
                         <div class="comb4">
                             <div class="cb2"><h2 id="idd">id :</h2></div><div class="cb2-1"><h3 id="dd1">댓글내용 .......................................................................................................</h3></div><div class="cb2-2"><button class="editBtn">수정</button><button class="deletBtn">삭제</button></div>
                         </div>
                         <div class="comb5">
-                            <img id="pop1" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png">
+                            <img id="pop1" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png">
                         </div>
                         <div class="comb6">
                             <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">댓글내용 .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">수정</button><button class="deletBtn">삭제</button></div>
                         </div>
                         <div class="comb5">
-                            <img id="pop1" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/resources/images/movie/movieT/팝콘 1.png">
+                            <img id="pop1" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png"><img id="pop2" src="/movieInsight/resources/images/movie/movieT/팝콘 1.png">
                         </div>
                         <div class="comb6">
                             <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">댓글내용 .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">수정</button><button class="deletBtn">삭제</button></div>
@@ -204,7 +204,7 @@
                         </div>
                     </form>
                     <button form="facilityForm" id="submit">
-                    	<img src="/resources/images/movie/movieT/list.png">
+                    	<img src="/movieInsight/resources/images/movie/movieT/list.png">
                     </button>
                 </fieldset>
         </div>
@@ -219,27 +219,27 @@
                       <div class="gallery">
                         <div class="ft1">
                           <a href="/favorite1">
-                            <img src="/resources/images/movie/movieT/youtube-logo 1.png" alt="Image 1">
+                            <img src="/movieInsight/resources/images/movie/movieT/youtube-logo 1.png" alt="Image 1">
                           </a>
                         </div>
                         <div class="ft2">
                           <a href="/favorite2">
-                            <img src="/resources/images/movie/movieT/logo 2.png" alt="Image 2">
+                            <img src="/movieInsight/resources/images/movie/movieT/logo 2.png" alt="Image 2">
                           </a>
                         </div>
                         <div class="ft3">
                           <a href="/favorite3">
-                            <img src="/resources/images/movie/movieT/cat2 3.png" alt="Image 3">
+                            <img src="/movieInsight/resources/images/movie/movieT/cat2 3.png" alt="Image 3">
                           </a>
                         </div>
                         <div class="ft4">
                           <a href="/favorite4">
-                            <img src="/resources/images/movie/movieT/cat2 4.png" alt="Image 4">
+                            <img src="/movieInsight/resources/images/movie/movieT/cat2 4.png" alt="Image 4">
                           </a>
                         </div>
                         <div class="ft5">
                           <a href="/favorite5">
-                            <img src="/resources/images/movie/movieT/DR.CHEON.jpg" alt="Image 5">
+                            <img src="/movieInsight/resources/images/movie/movieT/DR.CHEON.jpg" alt="Image 5">
                           </a>
                         </div>
                         <!-- 추가 이미지들을 이곳에 추가 -->
@@ -252,6 +252,6 @@
         </div>
     </main>
 
-    <script src="/resources/js/movie/movieT.js"></script>
+    <script src="/movieInsight/resources/js/movie/movieT.js"></script>
 </body>
 </html>
