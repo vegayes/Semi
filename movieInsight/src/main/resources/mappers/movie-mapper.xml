@@ -3,7 +3,7 @@
 <mapper namespace = "movieMapper">
 	<!-- BoardImage resultMap -->
 	
-<!--  
+ 
 	<resultMap type="Movie" id="movie_rm">
 		<id property="movieNo" column="MOVIE_NO"/>
 		
@@ -16,17 +16,31 @@
 		<result property="movieRunningTitle" column="MOVIE_RUNNING_TIME"/>
 		<result property="movieEnrollDate" column="MOVIE_ENROLL_DATE"/>
 		<result property="movieDelYN" column="MOVIE_DEL_YN"/>
+		<result property="actorNames" column="ACTOR_NAMES"/>
+		<result property="directorNames" column="DIRECTOR_NAMES"/>
 	</resultMap>
--->
+
 	<!-- CDATA 태그 : 해당 태그 내부에 작성된 것은 모두 문자로 취급 -->
-<!--  
-	<select id = "searchMovieList" resultMap ="movie_rm">
-		SELECT MOVIE_NO
-		FROM MOVIE
+
+	<!-- 검색 결과 ( 인물 검색은 안됨 )  -->
+	<select id = "searchMovieList" resultMap ="movie_rm" >
+		SELECT
+		    M.MOVIE_NO,
+		    M.MOVIE_TITLE,
+		    M.MOVIE_IMG,
+		    M.MOVIE_SUMMARY,
+		    M.MOVIE_GENRE,
+		    TO_CHAR(M.MOVIE_RELEASE_DATE, 'YYYY"년" MM"월" DD"일"') AS MOVIE_RELEASE_DATE,
+		    M.MOVIE_AGE,
+		    M.MOVIE_RUNNING_TIME,
+		    LISTAGG(CASE WHEN C.CASTING_CATEGORY = 'A' THEN C.CASTING_NAME ELSE NULL END, ' / ') WITHIN GROUP (ORDER BY C.CASTING_NAME) AS ACTOR_NAMES,
+		    LISTAGG(CASE WHEN C.CASTING_CATEGORY = 'D' THEN C.CASTING_NAME ELSE NULL END, ' / ') WITHIN GROUP (ORDER BY C.CASTING_NAME) AS DIRECTOR_NAMES
+		FROM MOVIE M
+		JOIN MOVIE_CASTING MC ON M.MOVIE_NO = MC.MOVIE_NO
+		JOIN CASTING C ON MC.CASTING_NO = C.CASTING_NO
+		WHERE M.MOVIE_DEL_YN = 'N' AND (M.MOVIE_TITLE LIKE '%' || #{movieQuery} || '%' OR MOVIE_GENRE LIKE '%' || #{movieQuery} || '%')
+		GROUP BY M.MOVIE_NO, M.MOVIE_TITLE, M.MOVIE_IMG, M.MOVIE_SUMMARY, M.MOVIE_GENRE, M.MOVIE_RELEASE_DATE, M.MOVIE_AGE, M.MOVIE_RUNNING_TIME	
 	</select>
--->
-
-
 
 
 

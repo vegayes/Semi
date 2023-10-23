@@ -13,9 +13,9 @@ import semi.project.movieInsight.movie.service.MovieService;
 
 @Controller
 public class MovieController {
-//	
-//	@Autowired
-//	private MovieService service;
+	
+	@Autowired
+	private MovieService service;
 	
 
 	/** 1) 영화 관련 페이지에서 검색한 내용 가져오기 
@@ -23,16 +23,19 @@ public class MovieController {
 	 * @return movie/search-movie
 	 */
 	@GetMapping("/search")
-    public String searchMovie(String movieQuery) {
+    public String searchMovie(String movieQuery, Model model) {
 		
 		System.out.println("search 페이지 들어옴");
 		
 		System.out.println("검색 내용 : " + movieQuery);
 		
 		// 검색한 영화 목록 조회 서비스 호출
-//		List<Movie> movieList = service.searchMovieList(movieQuery);
+		List<Movie> movieList = service.searchMovieList(movieQuery);
 
-//		System.out.println("movieList : " + movieList);
+		System.out.println("movieList : " + movieList);
+		
+		model.addAttribute("movieQuery", movieQuery);
+		model.addAttribute("movieList", movieList);
 		
         return "movie/search-movie";
     }

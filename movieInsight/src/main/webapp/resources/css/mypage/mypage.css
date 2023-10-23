@@ -1,5 +1,6 @@
 
 /*존재하지 않은 데이터에 대한 폰트*/
+
 @font-face {
     font-family: 'KBO-Dia-Gothic_bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
@@ -23,20 +24,22 @@ a, button{
     /* color : white; */
 }
 
+
 html {
     scroll-behavior: smooth;
-  }
-
+}
 
 main{
 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: inline-block;
 
     background-color: #101322;
 
     color: white;
+    
 }
+
 
 
 /*----------------------------------------------------------------------------*/
@@ -46,7 +49,7 @@ aside{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+	flex: 1;
     flex-basis: 17%;
     height: 840px;
     border-radius: 50px;
@@ -68,10 +71,12 @@ aside > a{
     color: white;
 }
 
+/*----------------------------------------------------------------------------*/
 
 .mypage-content{
+	flex: 3;
     flex-basis: 83%;
-    border: 2px solid white;
+    border: 5px solid red;
     
   }
 
@@ -112,7 +117,7 @@ aside > a{
     /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: center;
-
+}
 
 
 /* 마이페이지-즐겨찾기 */
@@ -158,7 +163,7 @@ aside > a{
 .cinema-favorite-btn {
     background-color: white;
     opacity: 0.5;
-    color : white
+    color : white;
 }
 
 
@@ -176,8 +181,6 @@ aside > a{
     
     cursor: pointer;
 }
-
-
 
 /*==============================================================================================*/
 
@@ -514,7 +517,7 @@ aside > a{
     height: 40px;
     border-radius: 10px;
     font-size: 10px;
-    background-color: rgb(241, 239, 106);
+    background-color: #a3cef1;
     margin:auto;
     display: flex;
     justify-content: center;
@@ -531,6 +534,14 @@ aside > a{
 
 }
 
+.history-del-btn:hover{
+	background-color: #ff4d6d;
+    font-weight: bold;
+	opacity: 0.9;
+}
+.history-del-btn>div:hover{
+	   	color :white;
+}
 
 /* ======================================================================= */
 
@@ -716,7 +727,18 @@ aside > a{
     background-color: white;
     border: none;
     border-radius: 20px;
+    
+    color : black;
+    font-weight : bold;
 
+}
+
+.comment-list-del-btn:hover{
+   	background-color: #ff4d6d;
+   	color :white;
+    font-weight: bold;
+    	
+	opacity: 0.9;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -954,6 +976,8 @@ input[type="file"] {
     align-items: center;
 
     /* border: 2px solid rebeccapurple; */
+    
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .member-info-option-btn{
@@ -971,6 +995,10 @@ input[type="file"] {
     background: rgba(255, 255, 255, 0.50);
     font-size: 30px;
     font-weight: bold;
+}
+
+.member-info-option-btn:hover{
+	 opacity: 0.85;
 }
 
 
@@ -1042,7 +1070,7 @@ footer>img{
     transform: translate(-50%, -50%); /* 가운데로 이동 */
     z-index: 1;
     /* width: 80%; 모달의 너비 */
-    max-width: 1000px; /* 최대 너비 설정 */
+    max-width: 1200px; /* 최대 너비 설정 */
     height: 400px;
     background-color: #f4f4f4;
     padding: 20px;
