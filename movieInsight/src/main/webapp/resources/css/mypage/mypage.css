@@ -182,8 +182,6 @@ aside > a{
     cursor: pointer;
 }
 
-
-
 /*==============================================================================================*/
 
 .favorite-not-content{
@@ -731,6 +729,7 @@ aside > a{
     border-radius: 20px;
     
     color : black;
+    font-weight : bold;
 
 }
 

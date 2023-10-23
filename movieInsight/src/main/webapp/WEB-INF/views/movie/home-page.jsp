@@ -3,19 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+	<meta charset="UTF-8">
+	<title>Main 페이지</title>
+	
+    <link rel="stylesheet" href="/resources/css/movie/home-page.css">
+	
+	</head>
 <body>
    
+   <!--  
     <header>
-
-
-   
-
-
-
-
       <img src="바탕화면/logo.png" width="300" />
       <div class="search_wrapper">
         <input class="search" placeholder="검색" />
@@ -27,10 +24,14 @@
         <div class="user"><a href="mypage.jsp"><img src="바탕화면/info.png" width="36" /></div>
       </div>
     </header>
+    
+   --> 
+   
+	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+   	
+    
+    
     <main>
-
-
-
       <aside>
         <section class="movie_list swiper swiper-ls-1">
           <span class="section_title">영화관 추천</span>
