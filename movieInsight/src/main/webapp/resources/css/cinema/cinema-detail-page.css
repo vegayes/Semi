@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+
 
 body{
     margin: 0;
@@ -40,7 +40,7 @@ main>section{
 
 
 
-/*////// ¿µÈ­°ü ¼³¸íÆäÀÌÁö/////////////////*/
+/*////// ì˜í™”ê´€ ì„¤ëª…í˜ì´ì§€/////////////////*/
 
 .cinema{
 
@@ -183,7 +183,7 @@ main>section{
 .cinema_description>div>div{
 
     padding-bottom: 5%;
-    /* ÁÙ °£°İ */
+    /* ì¤„ ê°„ê²© */
 
 }
 
@@ -210,7 +210,7 @@ main>section{
 
 
 
-/* »ó¿µÁßÀÎ ¿µÈ­ */
+/* ìƒì˜ì¤‘ì¸ ì˜í™” */
 
 
 .screening_movie{
@@ -223,7 +223,7 @@ main>section{
 
 .screening_movie>div:nth-child(1){
 
-    /* Á¦¸ñ Ä­*/
+    /* ì œëª© ì¹¸*/
 
     height: 12%;
     font-size: 3rem;
@@ -238,7 +238,7 @@ main>section{
 
 .screening_movie>.screening_movie_detail{
 
-    /*¿µÈ­ Ä­  */
+    /*ì˜í™” ì¹¸  */
 
     height: 88%;
     display: flex;
@@ -254,7 +254,7 @@ main>section{
 
 .screening_movie_detail>div{
 
-    /* ¿µÈ­ °¡·ÎÁÙ */
+    /* ì˜í™” ê°€ë¡œì¤„ */
     flex: 1;
     display: flex;
 
@@ -264,7 +264,7 @@ main>section{
 
 .screening_movie_detail>div>div{
 
-    /* ¿µÈ­ ÁÙ Ä­ */
+    /* ì˜í™” ì¤„ ì¹¸ */
     flex: 1;
 
 
@@ -273,7 +273,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(1){
 
-    /* ¿µÈ­ ÀÌ¹ÌÁö Ä­ */
+    /* ì˜í™” ì´ë¯¸ì§€ ì¹¸ */
 
     display: flex;
     justify-content: center;
@@ -287,7 +287,7 @@ main>section{
 
 .screening_movie_detail>div>div>img{
 
-    /* ¿µÈ­ ÀÌ¹ÌÁö */
+    /* ì˜í™” ì´ë¯¸ì§€ */
     width: 40%;
     height: 70%;
 
@@ -297,7 +297,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(2){
 
-    /* ¿µÈ­ ¼³¸í Ä­*/
+    /* ì˜í™” ì„¤ëª… ì¹¸*/
 
     display: flex;
     flex-direction: column;
@@ -310,7 +310,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(2)>div{
 
-    /* ¿µÈ­ ¼³¸í Ä­ ±ÛÀÚ ÁÙ*/
+    /* ì˜í™” ì„¤ëª… ì¹¸ ê¸€ì ì¤„*/
     padding: 0.5%;
     font-size: 1.3rem;
 
@@ -320,7 +320,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(2)>div:nth-child(1){
 
-    /* ¿µÈ­ Á¦¸ñ*/
+    /* ì˜í™” ì œëª©*/
     font-size: 2rem;
 
 
@@ -333,7 +333,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(2)>div:nth-child(1){
 
-    /* ¿µÈ­ ¼³¸í Ä­ ±ÛÀÚ Ã¹¹øÂ° ÁÙ*/
+    /* ì˜í™” ì„¤ëª… ì¹¸ ê¸€ì ì²«ë²ˆì§¸ ì¤„*/
     padding-bottom: 5%;
 
 
@@ -346,7 +346,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(3){
 
-    /* ¿µÈ­ Ãâ¿¬Áø Ä­*/
+    /* ì˜í™” ì¶œì—°ì§„ ì¹¸*/
 
     display: flex;
     flex-direction: column;
@@ -360,7 +360,7 @@ main>section{
 
 .screening_movie_detail>div>div:nth-child(3)>div{
 
-    /* ¿µÈ­ Ãâ¿¬ Ä­ ±ÛÀÚ ÁÙ*/
+    /* ì˜í™” ì¶œì—° ì¹¸ ê¸€ì ì¤„*/
     padding: 0.5%;
     font-size: 1.3rem;
 
@@ -372,8 +372,8 @@ main>section{
 
 
 #img_checkbox{
-    /*Ã¼Å©¹Ú½º ÀÌ¹ÌÁö  */
-    background-image: url(img/ÆËÄÜ.png);
+    /*ì²´í¬ë°•ìŠ¤ ì´ë¯¸ì§€  */
+    background-image: url(img/íŒì½˜.png);
 
 }
 
@@ -385,7 +385,7 @@ main>section{
 /**********************************/
 
 .facility {
-    /* ½Ã¼³ ¸¸Á·µµ */
+    /* ì‹œì„¤ ë§Œì¡±ë„ */
     display: flex;
     flex-direction: column;
     width: 1;
@@ -405,7 +405,7 @@ main>section{
 
 
 .block_name{
-    /* Á¦¸ñ */
+    /* ì œëª© */
     font-size: 3rem;
     font-weight: bold;
     display: flex;
@@ -426,7 +426,7 @@ main>section{
 
 .facility .block_body{
 
-    /* ´ñ±Ûµé */
+    /* ëŒ“ê¸€ë“¤ */
     display: flex;
     flex-direction: column;
     height: 80%;
@@ -615,7 +615,7 @@ main>section{
 
 .facility .commentForm{
 
-    /* Æò°¡ ÀÔ·ÂÃ¢ */
+    /* í‰ê°€ ì…ë ¥ì°½ */
 
     flex-basis: 18%;
     display: flex;
@@ -671,7 +671,7 @@ main>section{
 
 
 
-/* /////µûºÀ///// */
+/* /////ë”°ë´‰///// */
 
 .CF2 {
 
@@ -714,7 +714,7 @@ main>section{
 
 
 
-/* ¸Ş´º ÃßÃµ */
+/* ë©”ë‰´ ì¶”ì²œ */
 
 .recommended_menu{
 
@@ -726,7 +726,7 @@ main>section{
 
 
 .recommended_menu>div:nth-child(1){
-    /* ¸Ş´º Á¦¸ñ */
+    /* ë©”ë‰´ ì œëª© */
     
     height: 13%;
     font-size: 3rem;
@@ -752,7 +752,7 @@ main>section{
 
 
 .recommended_menu>div:nth-child(2){
-    /* ¸Ş´º Ä­ */
+    /* ë©”ë‰´ ì¹¸ */
     
     height: 70%;
     display: flex;
@@ -764,7 +764,7 @@ main>section{
 
 
 .recommended_menu>div:nth-child(2)>div{
-    /* ¸Ş´º À½½Ä ÁÙ */
+    /* ë©”ë‰´ ìŒì‹ ì¤„ */
     flex: 1;
     display: flex;
   
@@ -774,7 +774,7 @@ main>section{
 
 
 .recommended_menu>div:nth-child(2)>div>div{
-    /* ¸Ş´º À½½Ä ÁÙ Ä­ */
+    /* ë©”ë‰´ ìŒì‹ ì¤„ ì¹¸ */
     flex: 1;
     display: flex;
     justify-content: center;
@@ -788,7 +788,7 @@ main>section{
 
 
 .recommended_menu>div:nth-child(2)>div>div:nth-child(1){
-    /* ¸Ş´º À½½Ä ÁÙ Á¦¸ñ Ä­ */
+    /* ë©”ë‰´ ìŒì‹ ì¤„ ì œëª© ì¹¸ */
 
     font-size: 2rem;
 
@@ -815,7 +815,7 @@ main>section{
 
 
 
-/* ´ñ±Û */
+/* ëŒ“ê¸€ */
 
 
 .comment{
@@ -867,10 +867,10 @@ main>section{
 
 
 
-/* µî·Ï ¹öÆ° */
+/* ë“±ë¡ ë²„íŠ¼ */
 #submit{
     background-image: url(/resources/images/cinema/write.png);
-    background-repeat: no-repeat;/* ¹è°æ ÀÌ¹ÌÁö 1°³ */
+    background-repeat: no-repeat;/* ë°°ê²½ ì´ë¯¸ì§€ 1ê°œ */
     background-position: center;
     width: 100px;
     height: 100px;

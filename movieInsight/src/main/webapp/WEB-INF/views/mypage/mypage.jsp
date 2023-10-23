@@ -17,10 +17,10 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 		
 		
-		<link rel="stylesheet" href="/resources/css/mypage/mypage.css">
+		<link rel="stylesheet" href="/movieInsight/resources/css/mypage/mypage.css">
 
-		<link rel="stylesheet" href="/resources/css/mypage/favorite-list-popup.css">
-		<link rel="stylesheet" href="/resources/css/mypage/comment-update-popup.css">  
+		<link rel="stylesheet" href="/movieInsight/resources/css/mypage/favorite-list-popup.css">
+		<link rel="stylesheet" href="/movieInsight/resources/css/mypage/comment-update-popup.css">  
 	</head>
 	<body>
 	
@@ -1064,7 +1064,7 @@
         <!-- Swiper 스크립트 추가 -->
         <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
-        <script src = "resources/js/mypage/mypage.js"></script>		
+        <script src = "/movieInsight/resources/js/mypage/mypage.js"></script>		
 		
 	</body>
 </html>

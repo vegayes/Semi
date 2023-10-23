@@ -115,13 +115,13 @@
                 	</c:when>
                 	<%-- 2-2) 로그인  O 경우 --%>
                 	<c:otherwise>				
-		               <a class = "user-logout"  href="/mypage">
+		               <a class = "user-logout"  href="/">
 		                   <i class="fa-solid fa-right-from-bracket"></i>
 		                   <span>LOGOUT</span>
 		               </a>
 		               
 		               <!-- ⑤ 버튼으로 만들어야 하나? -->
-		                <a class = "user-mypage" herf="/mypage">
+		                <a class = "user-mypage" href="/mypage">
 		                    <div class = "mypage-wrapper">
 		                    
 		                    	<%-- 3) 프로필 유무 ( 로그인부터 파악해야 하나..? ) --%>

@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
 
- <link rel="stylesheet" href="/resources/css/cinema/cinema-detail-page.css">
  <script src="https://kit.fontawesome.com/69a462bb6c.js" crossorigin="anonymous"></script>
-
+ <link rel="stylesheet" href="/resources/css/cinema/cinema-detail-page.css">
 </head>
 <body>
 	
@@ -18,8 +18,9 @@
 	<main>
         <section class="cinema">
             <div>
-                <img src="/resources/images/cinema/cgv_yongsan.png" id="cgv_yongsan">
+                <img src="/resources/images/cinema/${cinemaInfo.cinemaImg}" id="cgv_yongsan">
             </div>
+            
             <div>
                 <div class="cinema_title">
                     <div class="star">
@@ -28,7 +29,7 @@
                         </a> 
                     </div>                 
                     <div>
-                        CGV ¿ë»ê¾ÆÀÌÆÄÅ©¸ô
+                       ${cinemaInfo.cinemaName}  
                     </div>
                     <div>
                         <div>
@@ -51,19 +52,18 @@
                 <div class="cinema_description">
                     <div>
                         <div>
-                            ÁÖ¼Ò : ¼­¿ïÆ¯º°½Ã ¿ë»ê±¸ ÇÑ°­´ë·Î23±æ 55
-                        </div>
+                            ì£¼ì†Œ : ${cinemaInfo.cinemaAddress}                       </div>
                         <div>    
-                            ¿¬¶ôÃ³ : 02-1544-1122
+                            ì—°ë½ì²˜ : ${cinemaInfo.cinemaContact} 
                         </div>
                         <div>
-                            ¼ö¿ëÀÎ¿ø : 20°ü (3,888¼®)
+                            ìˆ˜ìš©ì¸ì› : ${cinemaInfo.cinemaMaxInclude} ëª… 
                         </div>
                         <div>   
-                            Æ¯º°°ü : 4DX,IMAX,SCREENX,Dolby Atmos
+                            íŠ¹ë³„ê´€ : 4DX,IMAX,SCREENX,Dolby Atmos
                         </div>
                         <div>
-                           <a href="http://www.cgv.co.kr/theaters/?theaterCode=0013">¹Ù·Î°¡±â</a> 
+                           <a href=${cinemaInfo.cinemaLink }>ë°”ë¡œê°€ê¸°</a> 
                         </div>
                     </div>
                 </div>
@@ -72,20 +72,20 @@
 
 
         <section class="screening_movie">
-            <div>»ó¿µÁßÀÎ ¿µÈ­</div>
+            <div>ìƒì˜ì¤‘ì¸ ì˜í™”</div>
             <div class="screening_movie_detail">
                 <div>
                     <div>
-                        <img src="/resources/images/cinema/À¯ÅäÇÇ¾Æ.png">
+                        <img src="/resources/images/cinema/ìœ í† í”¼ì•„.png">
                     </div>
                     <div>
-                        <div>ÄÜÅ©¸®Æ® À¯ÅäÇÇ¾Æ</div>
-                        <div>15¼¼/µå¶ó¸¶/130ºÐ</div>
-                        <div>2023.08.09 °³ºÀ</div>
+                        <div>ì½˜í¬ë¦¬íŠ¸ ìœ í† í”¼ì•„</div>
+                        <div>15ì„¸/ë“œë¼ë§ˆ/130ë¶„</div>
+                        <div>2023.08.09 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>¹Úº¸¿µ, ¹Ú¼­ÁØ, ÀÌº´Çå</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>ë°•ë³´ì˜, ë°•ì„œì¤€, ì´ë³‘í—Œ</div>
                     </div>
                 </div>
                 <div>
@@ -93,13 +93,13 @@
                         <img src="resources/images/cinema/movie_sleep.png">
                     </div>
                     <div>
-                        <div>Àá</div>
-                        <div>15¼¼/¹Ì½ºÅÍ¸®/94ºÐ</div>
-                        <div>2023.09.09 °³ºÀ</div>
+                        <div>ìž </div>
+                        <div>15ì„¸/ë¯¸ìŠ¤í„°ë¦¬/94ë¶„</div>
+                        <div>2023.09.09 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Á¤À¯¹Ì, ÀÌ»ó°æ, ±è±¹Èñ</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>ì •ìœ ë¯¸, ì´ìƒê²½, ê¹€êµ­í¬</div>
                     </div>
                 </div>
 
@@ -108,29 +108,13 @@
                         <img src="resources/images/cinema/movie_oppenheimer.png">
                     </div>
                     <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
-                    </div>
-                </div>
-
-
-                <div>
-                    <div>
-                        <img src="resources/images/cinema/movie_oppenheimer.png">
-                    </div>
-                    <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
-                    </div>
-                    <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
                     </div>
                 </div>
 
@@ -140,29 +124,13 @@
                         <img src="resources/images/cinema/movie_oppenheimer.png">
                     </div>
                     <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
-                    </div>
-                </div>
-
-
-                <div>
-                    <div>
-                        <img src="resources/images/cinema/movie_oppenheimer.png">
-                    </div>
-                    <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
-                    </div>
-                    <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
                     </div>
                 </div>
 
@@ -172,13 +140,13 @@
                         <img src="resources/images/cinema/movie_oppenheimer.png">
                     </div>
                     <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
                     </div>
                 </div>
 
@@ -188,13 +156,45 @@
                         <img src="resources/images/cinema/movie_oppenheimer.png">
                     </div>
                     <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div>
+                        <img src="resources/images/cinema/movie_oppenheimer.png">
+                    </div>
+                    <div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
+                    </div>
+                    <div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div>
+                        <img src="resources/images/cinema/movie_oppenheimer.png">
+                    </div>
+                    <div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
+                    </div>
+                    <div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
                     </div>
                 </div>
 
@@ -203,13 +203,13 @@
                         <img src="resources/images/cinema/movie_oppenheimer.png">
                     </div>
                     <div>
-                        <div>¿ÀÆæÇÏÀÌ¸Ó</div>
-                        <div>15¼¼/½º¸±·¯/180ºÐ</div>
-                        <div>2023.08.15 °³ºÀ</div>
+                        <div>ì˜¤íŽœí•˜ì´ë¨¸</div>
+                        <div>15ì„¸/ìŠ¤ë¦´ëŸ¬/180ë¶„</div>
+                        <div>2023.08.15 ê°œë´‰</div>
                     </div>
                     <div>
-                        <div>Ãâ¿¬Áø</div>
-                        <div>Å³¸®¾ð ¸ÓÇÇ, ÇÃ·Î·»½º Ç», ¿¡¹Ð¸® ºí·±Æ®</div>
+                        <div>ì¶œì—°ì§„</div>
+                        <div>í‚¬ë¦¬ì–¸ ë¨¸í”¼, í”Œë¡œë ŒìŠ¤ í“¨, ì—ë°€ë¦¬ ë¸”ëŸ°íŠ¸</div>
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@
         <section class="facility">
             <section class="block">
                 <section class="block_name">                    
-                      ½Ã¼³¸¸Á·µµ
+                      ì‹œì„¤ë§Œì¡±ë„
                 </section>
                <section class="block_body">
                 <div class="combody">
@@ -230,25 +230,25 @@
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb2">
-                        <div class="cb1"><h2 id="idd">id :</h2></div><div class="cb1-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb1-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb1"><h2 id="idd">id :</h2></div><div class="cb1-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb1-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb4">
-                        <div class="cb2"><h2 id="idd">id :</h2></div><div class="cb2-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb2-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb2"><h2 id="idd">id :</h2></div><div class="cb2-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb2-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb6">
-                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb6">
-                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
             </div>
             </section>
@@ -256,13 +256,13 @@
             <fieldset class="commentForm">
                 <form id="facilityForm">
                     <div>
-                        <input placeholder= "½Ã¼³ Æò°¡³»¿ë ÀÔ·Â....">
+                        <input placeholder= "ì‹œì„¤ í‰ê°€ë‚´ìš© ìž…ë ¥....">
                     </div>
                     <div>
-                        ÆòÁ¡ : 
+                        í‰ì  : 
                     </div>
                     <div class="CF2"> 
-                        <!-- µûºÀ -->
+                        <!-- ë”°ë´‰ -->
                         <i class="far fa-thumbs-up"></i>
                         <i class="far fa-thumbs-up"></i>
                         <i class="far fa-thumbs-up"></i>
@@ -279,7 +279,7 @@
         <section class="facility">
             <section class="block">
                 <section class="block_name">                    
-                      Á÷¿ø Ä£Àýµµ
+                      ì§ì› ì¹œì ˆë„
                 </section>
                <section class="block_body">
                 <div class="combody">
@@ -287,38 +287,38 @@
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb2">
-                        <div class="cb1"><h2 id="idd">id :</h2></div><div class="cb1-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb1-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb1"><h2 id="idd">id :</h2></div><div class="cb1-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb1-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb4">
-                        <div class="cb2"><h2 id="idd">id :</h2></div><div class="cb2-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb2-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb2"><h2 id="idd">id :</h2></div><div class="cb2-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb2-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb6">
-                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
                     <div class="comb">
                         <img id="pop1" src="resources/images/cinema/popcon.png"><img id="pop2" src="resources/images/cinema/popcon.png">
                     </div>
                     <div class="comb6">
-                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">´ñ±Û³»¿ë .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">¼öÁ¤</button><button class="deletBtn">»èÁ¦</button></div>
+                        <div class="cb3"><h2 id="idd">id :</h2></div><div class="cb3-1"><h3 id="dd1">ëŒ“ê¸€ë‚´ìš© .......................................................................................................</h3></div><div class="cb3-2"><button class="editBtn">ìˆ˜ì •</button><button class="deletBtn">ì‚­ì œ</button></div>
                     </div>
             </section>
           </section>
             <fieldset class="commentForm">
                 <form id="facilityForm">
                     <div>
-                        <input type="text" placeholder= "Á÷¿ø Ä£Àýµµ Æò°¡ ÀÔ·Â....">
+                        <input type="text" placeholder= "ì§ì› ì¹œì ˆë„ í‰ê°€ ìž…ë ¥....">
                     </div>
                     <div>
-                        ÆòÁ¡ : 
+                        í‰ì  : 
                     </div>
                     <div class="CF2"> 
-                        <!-- µûºÀ -->
+                        <!-- ë”°ë´‰ -->
                         <i class="far fa-thumbs-up"></i>
                         <i class="far fa-thumbs-up"></i>
                         <i class="far fa-thumbs-up"></i>
@@ -332,18 +332,18 @@
 
         
         <section class="recommended_menu">
-            <div>¸Þ´º ÃßÃµ</div>
+            <div>ë©”ë‰´ ì¶”ì²œ</div>
             <div>
                 <div class="popcorn">
-                    <div>ÆËÄÜ 1µî</div>
+                    <div>íŒì½˜ 1ë“±</div>
                     <div >
                         <img src="/resources/images/cinema/menu_popcorn.png" id="img_popcorn">
                     </div>
                     <div>
-                        ÀÌ¸§ : ´õºíÄ¡ÁîÆËÄÜ(L)
+                        ì´ë¦„ : ë”ë¸”ì¹˜ì¦ˆíŒì½˜(L)
                     </div>
                     <div>
-                        °¡°Ý : 6500¿ø
+                        ê°€ê²© : 6500ì›
                     </div>
                     <div class="score_popcorn">
                         <div></div>
@@ -356,15 +356,15 @@
 
 
                 <div class="beverage">
-                    <div>À½·á 1µî</div>
+                    <div>ìŒë£Œ 1ë“±</div>
                     <div >
                         <img src="/resources/images/cinema/menu_beverage.png" id="img_beverage">
                     </div>
                     <div>
-                        ÀÌ¸§ : ½ºÀ§Æ®¾ÆÀÌ½º
+                        ì´ë¦„ : ìŠ¤ìœ„íŠ¸ì•„ì´ìŠ¤
                     </div>
                     <div>
-                        °¡°Ý : 5000¿ø
+                        ê°€ê²© : 5000ì›
                     </div>
                     <div class="score_beverage">
                         <div></div>
@@ -377,15 +377,15 @@
 
 
                 <div>
-                    <div>»çÀÌµå 1µî</div>
+                    <div>ì‚¬ì´ë“œ 1ë“±</div>
                     <div >
                         <img src="/resources/images/cinema/menu_side.png" id="img_side">
                     </div>
                     <div>
-                        ÀÌ¸§ : Âû¸®Ä¡Áî³ªÃÝ
+                        ì´ë¦„ : ì°°ë¦¬ì¹˜ì¦ˆë‚˜ìµ¸
                     </div>
                     <div>
-                        °¡°Ý : 5000¿ø
+                        ê°€ê²© : 5000ì›
                     </div>
                     <div class="score_side">
                         <div></div>
@@ -403,28 +403,28 @@
                 <fieldset>
                     <form id="menuForm">
 
-                        <label for="menu">ÇØ´ç ±ØÀå ¸Þ´º</label>
+                        <label for="menu">í•´ë‹¹ ê·¹ìž¥ ë©”ë‰´</label>
                         <select id="menu" name="menu">
-                            <option value="" disabled selected>¸ñ·Ï</option>
-                            <optgroup label="ÆËÄÜ">
-                                <option>ÆËÄÜÆË</option>
-                                <option>Ä¡ÁîÆËÄÜ</option>
+                            <option value="" disabled selected>ëª©ë¡</option>
+                            <optgroup label="íŒì½˜">
+                                <option>íŒì½˜íŒ</option>
+                                <option>ì¹˜ì¦ˆíŒì½˜</option>
                             </optgroup>
-                            <optgroup label="À½·á">
-                                <option>ÄÝ¶ó</option>
-                                <option>½ºÀ§Æ®¾ÆÀÌ½º</option>
+                            <optgroup label="ìŒë£Œ">
+                                <option>ì½œë¼</option>
+                                <option>ìŠ¤ìœ„íŠ¸ì•„ì´ìŠ¤</option>
                             </optgroup>
-                            <optgroup label="»çÀÌµå">
-                                <option>¼Ò½ÃÁöÄ¡Å²</option>
-                                <option>Âû¸®Ä¡Áî³ªÃÝ</option>
+                            <optgroup label="ì‚¬ì´ë“œ">
+                                <option>ì†Œì‹œì§€ì¹˜í‚¨</option>
+                                <option>ì°°ë¦¬ì¹˜ì¦ˆë‚˜ìµ¸</option>
                             </optgroup>
                         </select>
 
                             <div>
-                                ÆòÁ¡ : 
+                                í‰ì  : 
                             </div>
                             <div class="CF2"> 
-                                <!-- µûºÀ -->
+                                <!-- ë”°ë´‰ -->
                                 <i class="far fa-thumbs-up"></i>
                                 <i class="far fa-thumbs-up"></i>
                                 <i class="far fa-thumbs-up"></i>
@@ -442,12 +442,12 @@
     </main>
 
     <form id="correction">
-            <button >¼öÁ¤ ÇÏ±â </button>
+            <button >ìˆ˜ì • í•˜ê¸° </button>
     </form>
 
 
 
-    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 
 

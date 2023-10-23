@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "cinemaMapper">
+	
+	
+	<resultMap type="Cinema" id="cinema_rm">
+		
+		<!-- 자바의 변수와 DB의 컬럼을 매핑해줌 -> 조회 결과 자동으로 저장 -->
+		<!-- DB의 기본 키(PK, 복합키면 여러 개 작성) -->
+		<id property="cinemaNo" column="CINEMA_NO" />
+
+		<!-- DB의 일반 컬럼들 -->
+		<result property="cinemaName" column="CINEMA_NAME" />
+		<result property="cinemaAddress" column="CINEMA_ADDRESS" />
+		<result property="cinemaContact" column="CINEMA_CONTACT" />
+		<result property="cinemaImg" column="CINEMA_IMG" />
+		<result property="cinemaLink" column="CINEMA_LINK" />
+		<result property="cinemaMaxInclude" column="CINEMA_MAX_INCLUDE" />
+		<result property="cinemaDelYN" column="CINEMA_DEL_YN" />
+		
+	</resultMap>
+
+
+
+	<select id="selectCinemaInfo" parameterType="Cinema" resultMap="cinema_rm">
+  		SELECT CINEMA_NO, CINEMA_NAME, CINEMA_ADDRESS, CINEMA_CONTACT,
+			CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE, CINEMA_DEL_YN
+		FROM "CINEMA"
+		WHERE CINEMA_DEL_YN = 'N'
+		AND CINEMA_NAME = #{cinemaName}
+  	</select>
+
+</mapper>
