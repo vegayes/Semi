@@ -59,7 +59,7 @@
                         <div>
                             수용인원 : ${cinemaInfo.cinemaMaxInclude} 명 
                         </div>
-                        <div>   
+                              <div>   
                             특별관 : 4DX,IMAX,SCREENX,Dolby Atmos
                         </div>
                         <div>
