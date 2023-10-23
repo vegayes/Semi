@@ -5,8 +5,6 @@
 
 <%-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 	1) CSS 왜 안되는지 모르겠음. 
-	2) hover 하면 Title 나오기
-	3) 클릭하면 상세페이지 이동 
 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ --%>
 
 
@@ -40,8 +38,8 @@
                 	<c:otherwise> 
                 		<%-- 2-1) 반복해서 보여주기 --%>
 
-                		<c:forEach items = "${movieList}" var="movie">
-			                 <div class = "movie-search-list-container">
+                		<c:forEach items = "${movieList}" var="movie" >
+			                 <div class = "movie-search-list-container" onclick="movieInfo('${movie.movieNo}')"> <%-- value 값으로 전달가능? --%>
 			                    <div class = "movie-search-img-wrapper">
 			                        <img src = "/resources/images/movie/${movie.movieImg}" class = "movie-image">
 			                        <div class="movie-search-title">${movie.movieTitle}</div>
@@ -101,5 +99,9 @@
             </section>
 
         </main>
+        
+		<script src="/resources/js/movie/search-movie.js"></script>
+	
+        
 	</body>
 </html>

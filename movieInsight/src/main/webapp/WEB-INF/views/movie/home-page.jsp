@@ -7,6 +7,9 @@
 	<title>Main 페이지</title>
 	
     <link rel="stylesheet" href="/resources/css/movie/home-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	
 	</head>
 <body>
@@ -839,6 +842,10 @@
         </div>
       </aside>
     </main>
-    <footer></footer>
+	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+	
+	
+	<script src="/resources/js/movie/home-page.js"></script>
+	
 </body>
 </html>

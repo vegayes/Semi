@@ -94,14 +94,16 @@ body {background-color: #000;  box-sizing: border-box;}
         .cinema_item:hover {  background-color: #7bdff5; }
 
 
-        
-    
-          
-
-
-
-
-
+        #sortButton > button {
+        	color:black;
+        }
+    	
+         
+         #sortButton > button:hover {
+        	 background-color: #7bdff5;
+        }
+    	
+    	 
 
         /* 영화관,이벤트 홍보 부분 */
         /* 영화관,이벤트 홍보 컨테이너 */

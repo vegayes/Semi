@@ -61,6 +61,15 @@ main{
     justify-content: center;
     align-items: center;
 
+    transform:scale(1.0);        
+    transition: transform .5s; 
+
+}
+
+.movie-search-list-container:hover{
+    transform: scale(1.01);
+    transition: transform .5s;
+    box-shadow: 7px 7px 10px 0px rgb(143, 143, 143);
 }
 
 

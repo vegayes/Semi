@@ -1,6 +1,4 @@
 // ** smooth 이동
-
-
 document.querySelectorAll('a[href^="#mypage"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

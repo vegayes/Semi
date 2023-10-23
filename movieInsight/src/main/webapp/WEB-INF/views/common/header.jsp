@@ -20,7 +20,7 @@
 		<meta charset="UTF-8">
 		<title>Header</title>
 		
-		<link rel="stylesheet" href ="resources/css/common/header.css">
+		<link rel="stylesheet" href ="/resources/css/common/header.css">
 
         <script src="https://kit.fontawesome.com/ac58eafae7.js" crossorigin="anonymous"></script>
 		
