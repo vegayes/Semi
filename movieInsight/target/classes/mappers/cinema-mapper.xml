@@ -21,7 +21,7 @@
 	</resultMap>
 
 
-
+	<!-- 1) 영화관 설명 가져오기  -->
 	<select id="selectCinemaInfo" parameterType="Cinema" resultMap="cinema_rm">
   		SELECT CINEMA_NO, CINEMA_NAME, CINEMA_ADDRESS, CINEMA_CONTACT,
 			CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE, CINEMA_DEL_YN
@@ -29,5 +29,19 @@
 		WHERE CINEMA_DEL_YN = 'N'
 		AND CINEMA_NAME = #{cinemaName}
   	</select>
+  	
+  	
+  	
+  	<!-- 2) 검색한 영화관 결과 리스트 가져오기 -->
+  	<!--  
+  	<select id = "searchCinemaList" resultMap="cinema_rm">
+  		SELECT CINEMA_NO, CINEMA_NAME, CINEMA_ADDRESS, CINEMA_CONTACT,
+			CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE, CINEMA_DEL_YN
+		FROM "CINEMA"
+		WHERE CINEMA_DEL_YN = 'N'
+		AND CINEMA_NAME = #{cinemaQuery}
+  	</select>
+  	-->
+  	
 
 </mapper>

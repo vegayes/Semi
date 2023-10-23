@@ -53,7 +53,7 @@
                 	<c:choose>
 	                    <c:when test="true">
 
-			              	<form action="/search" name="movieSearch"> <!-- ② action 값 변경-->
+			              	<form action="/movieInsight/search" name="movieSearch"> <!-- ② action 값 변경-->
 			                  <fieldset>
 			                      <input type="search" id="query" name="movieQuery"
 			                      autocomplete="on" placeholder="검색">
@@ -69,7 +69,7 @@
 		                </c:when>
 		                <%-- 1-2)영화관 메인 페이지의 경우 --%>
 		                <c:when test="false">
-			              	<form action="/cinema/search" name="cinemaSearch"> <!-- ② action 값 변경-->
+			              	<form action="/movieInsight/cinema/search" name="cinemaSearch"> <!-- ② action 값 변경-->
 			                  <fieldset>
 			                      <input type="search" id="query" name="cinemaQuery"
 			                      autocomplete="on" placeholder="검색">

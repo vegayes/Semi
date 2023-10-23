@@ -49,9 +49,12 @@ public class MainController {
 //		}
 		
 //		return "cinema/cinema-homepage"; 
-		return "movie/movieT";
+//		return "movie/movieT";
 //		return "mypage/mypage";
+		return "member/login&signUp";
 //		return "movie/home-page";
+//		return "cinema/cinema-detail-page";
+		
 	}
 	
 }

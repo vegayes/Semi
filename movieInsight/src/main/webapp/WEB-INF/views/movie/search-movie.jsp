@@ -13,7 +13,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Search-Movie</title>
-		<link rel="stylesheet" href="/resources/css/movie/search-movie.css">
+		<link rel="stylesheet" href="/movieInsight/resources/css/movie/search-movie.css">
 	</head>
 	<body>
 	
@@ -41,7 +41,7 @@
                 		<c:forEach items = "${movieList}" var="movie" >
 			                 <div class = "movie-search-list-container" onclick="movieInfo('${movie.movieNo}')"> <%-- value 값으로 전달가능? --%>
 			                    <div class = "movie-search-img-wrapper">
-			                        <img src = "/resources/images/movie/${movie.movieImg}" class = "movie-image">
+			                        <img src = "/movieInsight/resources/images/movie/${movie.movieImg}" class = "movie-image"> <%-- ???????????? --%>
 			                        <div class="movie-search-title">${movie.movieTitle}</div>
 			                    </div>
 			                    
@@ -100,7 +100,7 @@
 
         </main>
         
-		<script src="/resources/js/movie/search-movie.js"></script>
+		<script src="/movieInsight/resources/js/movie/search-movie.js"></script>
 	
         
 	</body>

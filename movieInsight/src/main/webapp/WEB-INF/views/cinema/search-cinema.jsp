@@ -8,7 +8,7 @@
 		<meta charset="UTF-8">
 		<title>Search-Cinema</title>
 		
-		<link rel="stylesheet" href="/resources/css/cinema/search-cinema.css">
+		<link rel="stylesheet" href="/movieInsight/resources/css/cinema/search-cinema.css">
 		
 	</head>
 	<body>
@@ -18,8 +18,48 @@
         <main>
             <section class = "search-list">
                 <div class = "search-title-container">
-                    검색결과 : 시설 만족도순
+                    검색결과 : ${cinemaQuery}
                 </div>
+                
+                <c:choose>
+                	<%-- 1) 검색결과가 비어있는 경우 --%>
+                	<c:when test="${empty cinemaList}">
+    					<div class = "cinema-search-list-container" id = "none-list"> 
+    						검색결과가 존재하지 않습니다.
+    					</div>            		
+                	</c:when>
+                
+					<c:otherwise items = "${cinemaList}" var="cinema" >
+		                <div class = "cinema-search-list-container">
+		                    <div class = "cinema-search-img-wapper">
+		
+		                        <img src = "/resources/images/cinema/${cinema.cinemaImg}">
+		
+		                    </div>
+		                    
+		                    <div class = "cinema-search-content-container">
+		                        <div class = "cinema-search-content">
+		                            <h1>영등포 CGV 정보</h1>
+		                            <div class = "content-box">
+		                                <p>
+		                                    주소 : 서울특별시 용산구 한강대로23길 55                         특별관 : 4DX,IMAX,SCREENX,Dolby Atmos <br><br>
+		
+		                                    연락처 : 02-1544-1122                                                    수용인원 : 20관 (3,888석)                                </p>
+		                            </div>
+		                        </div>
+		                        <div class = "cinema-search-content">
+		                            <h1>영화관 평점</h1>
+		                            <div class = "content-box">
+		                                <p>
+		                                    평점
+		                                </p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>					
+					</c:otherwise>                
+                
+                </c:choose>
 
                 <!-- 리스트1 -->    
                 <div class = "cinema-search-list-container">
