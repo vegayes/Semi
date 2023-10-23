@@ -228,11 +228,12 @@ function displayPlaces(places) {
 	  let li = document.createElement("li");
 	  li.classList.add("cinema_item", "swiper-slide");
 	  
+	  
 	  console.log("test");
 	  
 	  // <a> 요소 생성
 	  let a = document.createElement("a");
-	  a.href = "#"; // 링크 URL 설정
+	  a.href = "cinemaDetail/" + placeNameList[i]; // 링크 URL 설정
 	
 	  // <a> 요소에 텍스트 콘텐츠 설정
 	  a.innerText = placeNameList[i]; // placeNameList의 값을 텍스트로 설정
