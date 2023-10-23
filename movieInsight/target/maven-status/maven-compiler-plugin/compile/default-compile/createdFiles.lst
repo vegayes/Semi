@@ -13,7 +13,6 @@ semi\project\movieInsight\cinema\dto\Cinema.class
 semi\project\movieInsight\movie\controller\MovieController.class
 semi\project\movieInsight\movie\service\MovieServiceimpl.class
 semi\project\movieInsight\cinema\dao\CinemaDetailDAO.class
-semi\project\movieInsight\main\MainController.class
 semi\project\movieInsight\member\dao\EmailDAO.class
 semi\project\movieInsight\member\controller\MemberController.class
 semi\project\movieInsight\member\dao\MemberDAO.class

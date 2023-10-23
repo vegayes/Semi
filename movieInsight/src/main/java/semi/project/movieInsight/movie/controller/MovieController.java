@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import semi.project.movieInsight.movie.dto.Movie;
@@ -52,9 +53,6 @@ public class MovieController {
 		*/
 	
 	
-	
-	
-	
 	/** 좋아할 만한 영화 클릭
 	 * @return
 	 */
@@ -96,5 +94,28 @@ public class MovieController {
 	}
 	
 	
+	
+	//@GetMapping("/movie/이동할 상세페이지의 movieNo")
+	@GetMapping("/movie/move")
+	public String movieMove() {
+		
+//		int movieNo = 1;
+//		String path = "redirect:";
+		
+//		path += "/movie/" + movieNo;
+		
+		return "movie/movieT";
+	}
+	
+	
+	@GetMapping("/movie/{movieNo}")
+	public String searchMovieMove(@PathVariable("movieNo") int movieNo) {
+		
+		System.out.println("검색 후 이동");
+		System.out.println(movieNo);
+		
+		
+		return "movie/movieT";
+	}
 
 }
