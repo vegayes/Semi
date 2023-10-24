@@ -9,7 +9,7 @@
 
 
  <script src="https://kit.fontawesome.com/69a462bb6c.js" crossorigin="anonymous"></script>
- <link rel="stylesheet" href="/resources/css/cinema/cinema-detail-page.css">
+ <link rel="stylesheet" href="/movieInsight/resources/css/cinema/cinema-detail-page.css">
 </head>
 <body>
 	
@@ -18,7 +18,7 @@
 	<main>
         <section class="cinema">
             <div>
-                <img src="/resources/images/cinema/${cinemaInfo.cinemaImg}" id="cgv_yongsan">
+                <img src="/movieInsight/resources/images/cinema/${cinemaInfo.cinemaImg}" id="cgv_yongsan">
             </div>
             
             <div>
@@ -33,19 +33,19 @@
                     </div>
                     <div>
                         <div>
-                            <img src="/resources/images/cinema/popcon.png">
+                            <img src="/movieInsight/resources/images/cinema/popcon.png">
                         </div>
                         <div>
-                            <img src="/resources/images/cinema/popcon.png">
+                            <img src="/movieInsight/resources/images/cinema/popcon.png">
                         </div>
                         <div>
-                            <img src="/resources/images/cinema/popcon.png">
+                            <img src="/movieInsight/resources/images/cinema/popcon.png">
                         </div>
                         <div>
-                            <img src="/resources/images/cinema/popcon.png">
+                            <img src="/movieInsight/resources/images/cinema/popcon.png">
                         </div>
                         <div>
-                            <img src="/resources/images/cinema/popcon.png">
+                            <img src="/movieInsight/resources/images/cinema/popcon.png">
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
             <div class="screening_movie_detail">
                 <div>
                     <div>
-                        <img src="/resources/images/cinema/유토피아.png">
+                        <img src="/movieInsight/movieInsight/resources/images/cinema/유토피아.png">
                     </div>
                     <div>
                         <div>콘크리트 유토피아</div>

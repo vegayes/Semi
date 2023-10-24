@@ -1,5 +1,7 @@
 package semi.project.movieInsight.cinema.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import semi.project.movieInsight.cinema.dto.Cinema;
 import semi.project.movieInsight.cinema.service.CinemaDetailService;
 import semi.project.movieInsight.member.dto.Member;
+import semi.project.movieInsight.movie.dto.Movie;
 
 
 //@SessionAttributes({"loginMember"})
@@ -32,7 +35,6 @@ public class CinemaDetailController {
 	
 	
 	//영화관 정보 조회
-	
 	@GetMapping("/{cinemaName}")
 	public String selectCinema(
 			@PathVariable("cinemaName") String cinemaName,
@@ -48,10 +50,12 @@ public class CinemaDetailController {
 		 	System.out.println("cinemaInfo : " + cinemaInfo);
 		 	
 		 	model.addAttribute("cinemaInfo", cinemaInfo);
+		 	
+		 
+		 	List<Movie> movieList = service.selectMovieList(cinemaInfo.getCinemaNo());
+		 	System.out.println("movieList : " + movieList);
 		
-		
-		
-		
+		 	model.addAttribute("movieList", movieList);
 		
 			return "cinema/cinema-detail-page";
 	}

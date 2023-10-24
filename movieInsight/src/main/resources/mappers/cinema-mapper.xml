@@ -21,10 +21,29 @@
 	</resultMap>
 
 
-	<!-- 1) 영화관 설명 가져오기  -->
+
+	<resultMap type="Movie" id="movie_rm">
+		<id property="movieNo" column="MOVIE_NO"/>
+		
+		<result property="movieTitle" column="MOVIE_TITLE"/>
+		<result property="movieImg" column="MOVIE_IMG"/>
+		<result property="movieSummary" column="MOVIE_SUMMARY"/>
+		<result property="movieGenre" column="MOVIE_GENRE"/>
+		<result property="movieReleaseDate" column="MOVIE_RELEASE_DATE"/>
+		<result property="movieAge" column="MOVIE_AGE"/>
+		<result property="movieRunningTitle" column="MOVIE_RUNNING_TIME"/>
+		<result property="movieEnrollDate" column="MOVIE_ENROLL_DATE"/>
+		<result property="movieDelYN" column="MOVIE_DEL_YN"/>
+		<result property="actorNames" column="ACTOR_NAMES"/>
+		<result property="directorNames" column="DIRECTOR_NAMES"/>
+	</resultMap>
+
+
+
+
 	<select id="selectCinemaInfo" parameterType="Cinema" resultMap="cinema_rm">
   		SELECT CINEMA_NO, CINEMA_NAME, CINEMA_ADDRESS, CINEMA_CONTACT,
-			CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE, CINEMA_DEL_YN
+		CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE, CINEMA_DEL_YN
 		FROM "CINEMA"
 		WHERE CINEMA_DEL_YN = 'N'
 		AND CINEMA_NAME = #{cinemaName}
@@ -42,6 +61,35 @@
 		AND (CINEMA_NAME LIKE '%' || #{movieQuery} || '%'  OR CINEMA_ADDRESS LIKE '%' || #{movieQuery} || '% ' ) 
   	</select>
 
+  	<!--  
+  	<select id="selectMovieList" parameterType="Movie" resultMap="movie_rm">
+  		SELECT * FROM MOVIE m 
+		WHERE MOVIE_NO = 
+		(
+		SELECT MOVIE_NO FROM MOVIE_STATUS
+		WHERE CINEMA_NO = #{cinemaNo}
+		)
+  	</select>
+  	-->
+  	<select id="selectMovieList" parameterType="Movie" resultMap="movie_rm">
+  	SELECT * 
+	FROM (
+		SELECT
+		    M.MOVIE_NO,
+		    M.MOVIE_TITLE,
+		    M.MOVIE_IMG,
+		    M.MOVIE_GENRE,
+		    M.MOVIE_AGE,
+		    M.MOVIE_RUNNING_TIME,
+		    LISTAGG(CASE WHEN C.CASTING_CATEGORY = 'A' THEN C.CASTING_NAME ELSE NULL END, ' / ')
+		    WITHIN GROUP (ORDER BY C.CASTING_NAME) AS ACTOR_NAMES
+		FROM MOVIE M
+			JOIN MOVIE_CASTING MC ON M.MOVIE_NO = MC.MOVIE_NO
+			JOIN CASTING C ON MC.CASTING_NO = C.CASTING_NO
+			GROUP BY M.MOVIE_NO, M.MOVIE_TITLE, M.MOVIE_IMG, M.MOVIE_SUMMARY, M.MOVIE_GENRE, 
+			M.MOVIE_RELEASE_DATE, M.MOVIE_AGE, M.MOVIE_RUNNING_TIME, M.MOVIE_DEL_YN)
+	WHERE MOVIE_NO = (SELECT MOVIE_NO FROM MOVIE_STATUS WHERE CINEMA_NO = #{cinemaNo})
+  	</select>
   	
 
 </mapper>
