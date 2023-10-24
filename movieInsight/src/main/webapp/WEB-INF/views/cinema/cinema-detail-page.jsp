@@ -63,7 +63,7 @@
                             특별관 : 4DX,IMAX,SCREENX,Dolby Atmos
                         </div>
                         <div>
-                           <a href=${cinemaInfo.cinemaLink }>바로가기</a> 
+                           <a href=${cinemaInfo.cinemaLink}>바로가기</a> 
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
             <div class="screening_movie_detail">
                 <div>
                     <div>
-                        <img src="/movieInsight/movieInsight/resources/images/cinema/유토피아.png">
+                        <img src="/movieInsight/movieInsight/resources/images/cinema/${movieList.movieImg}">
                     </div>
                     <div>
                         <div>콘크리트 유토피아</div>

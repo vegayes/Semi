@@ -71,6 +71,8 @@
 		)
   	</select>
   	-->
+  	
+  	
   	<select id="selectMovieList" parameterType="Movie" resultMap="movie_rm">
   	SELECT * 
 	FROM (
