@@ -50,6 +50,17 @@
   	</select>
   	
   	
+  	
+  	<!-- 2) 검색한 영화관 결과 리스트 가져오기 --> 
+  	<!--  특별관, 평점 아직 못 가져옴 -->
+  	<select id = "searchCinemaList" resultMap="cinema_rm">
+  		SELECT CINEMA_NO, CINEMA_NAME, CINEMA_ADDRESS, CINEMA_CONTACT,
+			CINEMA_IMG, CINEMA_LINK, CINEMA_MAX_INCLUDE
+		FROM "CINEMA"
+		WHERE CINEMA_DEL_YN = 'N'
+		AND (CINEMA_NAME LIKE '%' || #{movieQuery} || '%'  OR CINEMA_ADDRESS LIKE '%' || #{movieQuery} || '% ' ) 
+  	</select>
+
   	<!--  
   	<select id="selectMovieList" parameterType="Movie" resultMap="movie_rm">
   		SELECT * FROM MOVIE m 

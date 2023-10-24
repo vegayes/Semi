@@ -31,15 +31,15 @@
             <!-- movie , cinema 확인하고 logo 눌렀을 때 이동 시, 제대로 이동하기. -->
             	<c:choose>
 
-            		<c:when test="false"> <%-- 영화관 페이지인 경우 --%>            	
+            		<c:when test="true"> <%-- 영화관 페이지인 경우 --%>            	
 		                <a href="/cinema">   <%-- 영화 메인페이지 컨트롤러- --%>               
-		                    <img src="resources/images/common/logo.png">
+		                    <img src="/movieInsight/resources/images/common/logo.png">
 		                </a>
             		</c:when>
             		
             		<c:otherwise> <%-- 영화, 마이페이지 페이지인 경우 --%>  
             		 	<a href="/">  <%-- 영화 메인페이지 컨트롤러- --%>              
-		                    <img src="resources/images/common/logo.png">
+		                    <img src="/movieInsight/resources/images/common/logo.png">
 		                </a>
             		</c:otherwise>
             		
@@ -51,9 +51,9 @@
                		<%--1) 페이지에 따라  --%>
                 	<%-- 1-1) 영화 메인 페이지의 경우 --%>
                 	<c:choose>
-	                    <c:when test="true">
+	                    <c:when test="false">
 
-			              	<form action="/search" name="movieSearch"> <!-- ② action 값 변경-->
+			              	<form action="/movieInsight/search" name="movieSearch"> <!-- ② action 값 변경-->
 			                  <fieldset>
 			                      <input type="search" id="query" name="movieQuery"
 			                      autocomplete="on" placeholder="검색">
@@ -68,8 +68,8 @@
 			                 </div>
 		                </c:when>
 		                <%-- 1-2)영화관 메인 페이지의 경우 --%>
-		                <c:when test="false">
-			              	<form action="/cinema/search" name="cinemaSearch"> <!-- ② action 값 변경-->
+		                <c:when test="true">
+			              	<form action="/movieInsight/cinema/search" name="cinemaSearch"> <!-- ② action 값 변경-->
 			                  <fieldset>
 			                      <input type="search" id="query" name="cinemaQuery"
 			                      autocomplete="on" placeholder="검색">

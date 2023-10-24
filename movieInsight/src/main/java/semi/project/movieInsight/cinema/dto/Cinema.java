@@ -13,7 +13,7 @@ public class Cinema {
 
 	private int cinemaNo;
 	private String cinemaName;
-	private String cinemaAddress;  // DB 이름 틀림
+	private String cinemaAddress;  
 	private String cinemaContact;
 	private String cinemaImg;
 	private String cinemaLink;
