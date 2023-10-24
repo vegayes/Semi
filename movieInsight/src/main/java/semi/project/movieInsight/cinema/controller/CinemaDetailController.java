@@ -34,6 +34,7 @@ public class CinemaDetailController {
 
 	
 	
+
 	//영화관 정보 조회
 	@GetMapping("/{cinemaName}")
 	public String selectCinema(
@@ -51,7 +52,7 @@ public class CinemaDetailController {
 		 	
 		 	model.addAttribute("cinemaInfo", cinemaInfo);
 		 	
-		 
+		 	
 		 	List<Movie> movieList = service.selectMovieList(cinemaInfo.getCinemaNo());
 		 	System.out.println("movieList : " + movieList);
 		
@@ -59,7 +60,6 @@ public class CinemaDetailController {
 		
 			return "cinema/cinema-detail-page";
 	}
-	
 	
 	
 	

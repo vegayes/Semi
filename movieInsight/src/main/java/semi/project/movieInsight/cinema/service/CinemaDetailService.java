@@ -10,5 +10,7 @@ public interface CinemaDetailService {
 
 	
 	Cinema selectCinemaInfo(String cinemaName);
+	
+	List<Movie> selectMovieList(int cinemaNo);
 
 }
