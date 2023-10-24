@@ -27,8 +27,11 @@ public class CinemaDetailServiceImpl implements CinemaDetailService {
 
 	@Override
 	public List<Movie> selectMovieList(int cinemaNo) {
-		
 		return dao.selectMovieList(cinemaNo);
 	}
+
+
+
+
 
 }
